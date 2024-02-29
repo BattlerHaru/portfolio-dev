@@ -1,0 +1,17 @@
+---
+import "./SocialItem.css";
+
+const { class: className, href, color, text } = Astro.props;
+---
+
+<a
+  class=`social-btn ${className} transition 
+  hover:scale-110 `
+  href={href}
+  target="_blank"
+  rel="noopener"
+  style=`--social-default-clr: ${color}`
+>
+  <span class="social-btn-txt"><slot />&nbsp;{text}</span><i
+    class="social-btn-line"></i>
+</a>

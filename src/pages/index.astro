@@ -1,7 +1,17 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SectionContainer from "@/components/utilities/SectionContainer.astro";
+import Home from "@/components/content/Home.astro";
+
+import LinkedInIcon from "@icons/social/Linkedin.astro";
 ---
 
-<Layout title="title." description="description.">
-  <main class="content px-4"></main>
+<Layout title="Portfolio Test" description="description.">
+  <main class="content px-4">
+    <SectionContainer class="py-32 md:py-44" id="home">
+      <Home />
+    </SectionContainer>
+  </main>
 </Layout>
+
+<style></style>
