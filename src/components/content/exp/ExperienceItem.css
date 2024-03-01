@@ -4,6 +4,7 @@
 }
 .exp-content:hover .exp-date-hover {
   color: var(--txt-highlight-2);
+  opacity: 0.75;
 }
 .exp-content:hover .exp-position-hover {
   color: var(--txt-highlight-2);

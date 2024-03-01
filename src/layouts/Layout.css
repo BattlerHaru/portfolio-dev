@@ -29,9 +29,10 @@
   --exp-list-border-color: #5d59c2;
   --exp-list-item-color: #3d5dee;
   --exp-list-item-hover-color: #ec4899;
+  --exp-content-bg-color: #1e1e20;
 }
 body {
   background: var(--bg-color);
   font-size: var(--txt-size);
-  /* color: var(--txt-color-1); */
+  color: var(--txt-color-1);
 }
