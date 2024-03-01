@@ -21,6 +21,7 @@
 .social-btn-txt {
   align-items: center;
   column-gap: 0.5rem;
+  color: var(--txt-color-1);
   display: flex;
   font-size: 1rem;
   font-weight: 400;
@@ -35,8 +36,8 @@
 }
 
 .social-btn:hover {
-  box-shadow: 0 0 var(--social-btn-shadow-size) var(--social-default-clr);
-  background-color: var(--social-default-clr);
+  box-shadow: 0 0 var(--social-btn-shadow-size) var(--social-default-color);
+  background-color: var(--social-default-color);
 }
 
 .social-btn-line {

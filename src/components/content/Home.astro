@@ -1,7 +1,7 @@
 ---
 import { basics } from "@data";
 import Socials from "@/components/utilities/social/Socials.astro";
-import Badge from "@/components/utilities/Badge.astro";
+import Badge from "@/components/utilities/badge/Badge.astro";
 
 interface ProfileInterface {
   username: string;
@@ -21,22 +21,32 @@ interface BasicsInterface {
 const { name, label, profiles }: BasicsInterface = basics;
 ---
 
-<h1
-  class="flex flex-row gap-x-4 text-balance pb-6 text-2xl font-bold md:text-4xl lg:pb-10 lg:text-5xl"
+<section class="flex flex-col items-center justify-center md:flex-row">
+  <div class="">
+    <h1
+      class="flex flex-row gap-x-4 text-balance pb-6 text-2xl font-bold md:text-4xl lg:pb-10 lg:text-5xl text-[--txt-color-1]"
+    >
+      Hey! I'm<span
+        class="text-[--txt-highlight-1] text-2xl md:text-4xl lg:text-5xl"
+        >{name}</span
+      >
+    </h1>
+  </div>
+
+  <div class="pb-10 md:pb-8 md:px-5">
+    <a
+      href={profiles["LinkedIn"].url}
+      target="_blank"
+      rel="noopener"
+      class="flex items-center justify-center transition hover:scale-105"
+    >
+      <Badge class="">Open to work 🚀</Badge></a
+    >
+  </div>
+</section>
+<h2
+  class="max-w-[900px] text-balance text-xl opacity-80 lg:text-2xl text-[--txt-color-1]"
 >
-  Hey! I'm<span
-    class="text-[--header-highlight] text-2xl md:text-4xl lg:text-5xl"
-    >{name}</span
-  ><a
-    href={profiles["LinkedIn"].url}
-    target="_blank"
-    rel="noopener"
-    class="flex items-center justify-center transition hover:scale-105"
-  >
-    <Badge>Open to work 🚀</Badge></a
-  >
-</h1>
-<h2 class="max-w-[900px] text-balance text-xl opacity-80 lg:text-2xl">
   {label}
 </h2>
 

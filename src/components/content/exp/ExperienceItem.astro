@@ -1,0 +1,54 @@
+---
+import "./ExperienceItem.css";
+
+interface Props {
+  name: string;
+  position: string;
+  url: string;
+  startDate: string;
+  endDate: string;
+  summary: string;
+  highlights: string[];
+}
+
+const {
+  name,
+  position,
+  url,
+  startDate: date,
+  summary: description,
+  highlights,
+} = Astro.props;
+---
+
+<div
+  class="exp-content transition rounded-md hover:bg-[--exp-content-bg-color] p-2"
+>
+  <div
+    class="absolute
+  -start-1.5
+  mt-1.5
+  size-3
+  rounded-full
+  border-2
+  border-[--exp-list-item-color]
+  bg-[--exp-list-item-color]
+  exp-circle-hover"
+  >
+  </div>
+
+  <time
+    class="mb-1 text-sm font-normal leading-none text-[--txt-color-2] exp-date-hover"
+    >{date}</time
+  >
+
+  <h3
+    class="mt-2 text-balance text-lg font-semibold text-[--txt-color-3] exp-position-hover"
+  >
+    {`${position} - ${name}`}
+  </h3>
+
+  <p class="text-pretty text-base font-normal text-[--txt-color-1] opacity-85">
+    {description}
+  </p>
+</div>

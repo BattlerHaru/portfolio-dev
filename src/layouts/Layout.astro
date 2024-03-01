@@ -1,4 +1,6 @@
 ---
+import "./Layout.css";
+
 import Header from "@/components/shared/Header.astro";
 import Footer from "@/components/shared/Footer.astro";
 
@@ -26,27 +28,3 @@ const { title, description } = Astro.props;
     <Footer />
   </body>
 </html>
-<style is:global>
-  :root {
-    /* headers */
-    --header-highlight: #5d59c2;
-
-    /* badge btn */
-    --badge-btn-grad-1: #f9f5ff;
-    --badge-btn-grad-2: #e0c9fe;
-    --badge-btn-grad-3: #a597e3;
-    --badge-btn-grad-4: #5d59c2;
-    --badge-btn-grad-5: #4949b6;
-    /* social btn */
-    --social-btn-bg: #5d59c2;
-    --social-btn-span-bg: #1e1e20;
-    --social-btn-shadow-size: 0.75rem;
-    --social-btn-txt-color: #e92323;
-    --social-default-clr: #fff;
-  }
-  body {
-    background: #121212;
-    font-size: 16px;
-    color: #fff;
-  }
-</style>

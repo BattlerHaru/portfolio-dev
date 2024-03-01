@@ -1,0 +1,37 @@
+:root {
+  --bg-color: #121212;
+  --txt-size: 16px;
+
+  /* txt colors */
+  --txt-color-1: #ffffff;
+  --txt-color-2: #62d9ee;
+  --txt-color-3: #5d59c2;
+
+  /* txt highlight colors */
+
+  --txt-highlight-1: #5d59c2;
+  --txt-highlight-2: #ec4899;
+
+  /* badge btn */
+  --badge-btn-grad-1: #f9f5ff;
+  --badge-btn-grad-2: #e0c9fe;
+  --badge-btn-grad-3: #a597e3;
+  --badge-btn-grad-4: #5d59c2;
+  --badge-btn-grad-5: #4949b6;
+
+  /* social btn */
+  --social-btn-bg: #5d59c2;
+  --social-btn-span-bg: #1e1e20;
+  --social-btn-shadow-size: 0.75rem;
+  --social-default-color: #ffffff;
+
+  /* Experience */
+  --exp-list-border-color: #5d59c2;
+  --exp-list-item-color: #3d5dee;
+  --exp-list-item-hover-color: #ec4899;
+}
+body {
+  background: var(--bg-color);
+  font-size: var(--txt-size);
+  /* color: var(--txt-color-1); */
+}

@@ -1,0 +1,10 @@
+.exp-content:hover .exp-circle-hover {
+  background-color: var(--exp-list-item-hover-color);
+  border-color: var(--exp-list-item-hover-color);
+}
+.exp-content:hover .exp-date-hover {
+  color: var(--txt-highlight-2);
+}
+.exp-content:hover .exp-position-hover {
+  color: var(--txt-highlight-2);
+}

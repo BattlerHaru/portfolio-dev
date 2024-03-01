@@ -2,14 +2,25 @@
 import Layout from "../layouts/Layout.astro";
 import SectionContainer from "@/components/utilities/SectionContainer.astro";
 import Home from "@/components/content/Home.astro";
+import Experience from "@/components/content/exp/Experience.astro";
 
-import LinkedInIcon from "@icons/social/Linkedin.astro";
+import BriefcaseIcon from "@icons/sections/Briefcase.astro";
 ---
 
 <Layout title="Portfolio Test" description="description.">
   <main class="content px-4">
     <SectionContainer class="py-32 md:py-44" id="home">
       <Home />
+    </SectionContainer>
+
+    <SectionContainer id="experience">
+      <h2
+        class="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
+      >
+        <BriefcaseIcon class="size-7" />
+        Experience
+      </h2>
+      <Experience />
     </SectionContainer>
   </main>
 </Layout>

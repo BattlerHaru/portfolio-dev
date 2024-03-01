@@ -10,7 +10,7 @@ const { class: className, href, color, text } = Astro.props;
   href={href}
   target="_blank"
   rel="noopener"
-  style=`--social-default-clr: ${color}`
+  style=`--social-default-color: ${color}`
 >
   <span class="social-btn-txt"><slot />&nbsp;{text}</span><i
     class="social-btn-line"></i>
