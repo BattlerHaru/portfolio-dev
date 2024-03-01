@@ -24,12 +24,25 @@
   --social-btn-span-bg: #1e1e20;
   --social-btn-shadow-size: 0.75rem;
   --social-default-color: #ffffff;
+  --social-line-before-h: 0.25rem;
+  --social-line-before-w: 0.625rem;
+  --social-line-before-hover-w: 0.85rem;
 
   /* Experience */
   --exp-list-border-color: #5d59c2;
   --exp-list-item-color: #3d5dee;
   --exp-list-item-hover-color: #ec4899;
   --exp-content-bg-color: #1e1e20;
+
+  /* Projects */
+  --proj-hover-bg-color: #1a1a1a;
+  --proj-desc-bg-color: #252525;
+  --proj-desc-bg-hover-color: #2b2b2b;
+  --proj-line-color: #5d59c2;
+  --proj-line-x-h: 0.25rem;
+  --proj-line-x-w: 15rem;
+  --proj-line-y-h: 10rem;
+  --proj-line-y-w: 0.25rem;
 }
 body {
   background: var(--bg-color);

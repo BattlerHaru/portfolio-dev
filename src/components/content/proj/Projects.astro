@@ -1,0 +1,218 @@
+---
+import { projects } from "@data";
+
+interface Project {
+  name: string;
+  date: string;
+  description: string;
+  tags: string[];
+  url: string;
+  github: string;
+  images: string[];
+}
+
+const PROJECTS: Project[] = projects;
+---
+
+<div class="projects-container">
+  <article class="project">
+    <div class="project-content">
+      <h3 class="project-title">{PROJECTS[0].name}</h3>
+      <div class="project-details">
+        <p class="project-description">
+          {PROJECTS[0].description}
+        </p>
+        <ul class="project-tags">
+          {PROJECTS[0].tags.map((tag) => <li class="project-tag">{tag}</li>)}
+        </ul>
+      </div>
+      <footer class="project-links">
+        <a class="project-link" href="#home">url</a>
+        <a class="project-link" href="#home">github</a>
+      </footer>
+    </div>
+    <div class="project-images">
+      <img src="/src/assets/img/test.jpg" alt="" class="project-image" />
+    </div>
+    <i class="projec-line-x"></i>
+    <i class="projec-line-y"></i>
+  </article>
+</div>
+
+<style>
+  .projects-container {
+    width: 100%;
+  }
+  .project {
+    align-items: center;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 1rem;
+    position: relative;
+  }
+
+  .projec-line-x {
+    display: block;
+    inset: 0;
+    overflow: hidden;
+    position: absolute;
+  }
+
+  .projec-line-x::before {
+    background: var(--proj-line-color);
+    content: "";
+    height: var(--proj-line-x-h);
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    transform: skewX(325deg);
+    transition: 0.5s;
+    width: var(--proj-line-x-w);
+  }
+
+  .projec-line-x::after {
+    background: var(--proj-line-color);
+    bottom: 0;
+    content: "";
+    height: var(--proj-line-x-h);
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    transform: skewX(325deg);
+    transition: 0.5s;
+    width: var(--proj-line-x-w);
+  }
+
+  .projec-line-y {
+    display: block;
+    inset: 0;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .projec-line-y::before {
+    background: var(--proj-line-color);
+    content: "";
+    height: var(--proj-line-y-h);
+    left: 0;
+    opacity: 0.8;
+    position: absolute;
+    top: 0;
+    transform: skewY(65deg);
+    transition: 0.5s;
+    width: var(--proj-line-y-w);
+  }
+  .projec-line-y::after {
+    background: var(--proj-line-color);
+    bottom: 0;
+    content: "";
+    height: var(--proj-line-y-h);
+    opacity: 0.8;
+    position: absolute;
+    right: 0;
+    transform: skewY(65deg);
+    transition: 0.5s;
+    width: var(--proj-line-y-w);
+  }
+
+  .project-content {
+    flex-basis: 35%;
+    z-index: 2;
+  }
+
+  .project-title {
+    color: var(--txt-highlight-1);
+    font-size: 2rem;
+    text-wrap: balance;
+    transition: 0.125s ease-in;
+  }
+
+  .project-details {
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .project-description {
+    background: var(--proj-desc-bg-color);
+    border-radius: 1rem;
+    color: var(--txt-color-1);
+    padding: 1.25rem 1.5625rem;
+    text-wrap: pretty;
+    transition: 0.125s ease-in;
+    width: calc(100% + 1rem);
+  }
+  .project-tags {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.2rem;
+    margin-top: 1.25rem;
+  }
+  .project-tag {
+    background-color: #252525;
+    border-radius: 1rem;
+    color: white;
+    font-family: monospace;
+    font-size: 0.8rem;
+    padding: 0.3rem;
+  }
+  .project-links {
+    align-items: center;
+    bottom: 0%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    margin-top: 1.5rem;
+  }
+
+  .project-link {
+    background-color: #252525;
+    border-radius: 0.5rem;
+    color: white;
+    font-weight: 500;
+    padding-inline: 1.5rem;
+    transition: 0.3s ease-in;
+  }
+
+  .project-images {
+    /* background: linear-gradient(0.4turn, #64ffda, #64ff8d); */
+    background-color: #649aff;
+    border-radius: 1rem;
+    filter: blur(0.3rem);
+    flex-basis: 65%;
+    transition: 0.125s ease-in;
+    z-index: 1;
+  }
+  .project-image {
+    aspect-ratio: 16/12;
+    border-radius: 1rem;
+    height: 100%;
+    mix-blend-mode: multiply;
+  }
+  .project:hover {
+    background: var(--proj-hover-bg-color);
+  }
+  .project:hover .project-description {
+    background: var(--proj-desc-bg-hover-color);
+  }
+  .project:hover .project-image {
+    mix-blend-mode: normal;
+  }
+  .project:hover .project-images {
+    filter: blur(0);
+  }
+  .project:hover .project-title {
+    color: var(--txt-highlight-2);
+  }
+
+  .project:hover .projec-line-y::after,
+  .project:hover .projec-line-y::before,
+  .project:hover .projec-line-x::after,
+  .project:hover .projec-line-x::before {
+    background: var(--txt-highlight-2);
+  }
+</style>

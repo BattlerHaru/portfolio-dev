@@ -3,8 +3,10 @@ import Layout from "../layouts/Layout.astro";
 import SectionContainer from "@/components/utilities/SectionContainer.astro";
 import Home from "@/components/content/Home.astro";
 import Experience from "@/components/content/exp/Experience.astro";
+import Projects from "@/components/content/proj/Projects.astro";
 
 import BriefcaseIcon from "@icons/sections/Briefcase.astro";
+import CodeIcon from "@icons/sections/Code.astro";
 ---
 
 <Layout title="Portfolio Test" description="description.">
@@ -21,6 +23,16 @@ import BriefcaseIcon from "@icons/sections/Briefcase.astro";
         Experience
       </h2>
       <Experience />
+    </SectionContainer>
+
+    <SectionContainer id="proyects">
+      <h2
+        class="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
+      >
+        <CodeIcon class="size-7" />
+        Proyects
+      </h2>
+      <Projects />
     </SectionContainer>
   </main>
 </Layout>
