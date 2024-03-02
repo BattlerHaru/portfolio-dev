@@ -4,9 +4,9 @@ import Socials from "@/components/utilities/social/Socials.astro";
 import Badge from "@/components/utilities/badge/Badge.astro";
 
 interface ProfileInterface {
-  username: string;
-  url: string;
-  color: string;
+  username?: string;
+  url?: string;
+  color?: string;
 }
 interface ProfilesInterface {
   [key: string]: ProfileInterface;

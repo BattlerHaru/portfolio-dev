@@ -1,0 +1,18 @@
+---
+import skills from "@/assets/data/skills.json";
+
+const tags: string[] = Astro.props.tags;
+const SKILLS: { [key: string]: string } = skills;
+const colorDefault = "#252525";
+---
+
+{
+  tags.map((tag: string) => (
+    <li
+      style={`--tag-color: ${SKILLS[tag.toLowerCase().replace(/\s+/g, "-")] ? SKILLS[tag.toLowerCase().replace(/\s+/g, "-")] : colorDefault}`}
+      class={`project-tag bg-[--tag-color] rounded-2xl p-2 hover:scale-105`}
+    >
+      <span class="text-xs font-bold text-white">{`#${tag}`}</span>
+    </li>
+  ))
+}

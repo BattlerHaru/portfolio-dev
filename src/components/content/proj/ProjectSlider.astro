@@ -1,0 +1,70 @@
+---
+const { class: className } = Astro.props;
+
+const images: string[] = Astro.props.images;
+---
+
+<div>
+  <section class="slider-container relative">
+    <div class="slider-wrapper mx-auto max-w-[45rem]">
+      <div
+        class="slider-imgs flex overflow-x-auto snap-x-mandatory scroll-smooth rounded-md"
+      >
+        {
+          images.map((image) => (
+            <img
+              id={image}
+              src={`/src/assets/img/${image}.webp`}
+              alt={`Image of ${image}`}
+              class={`slider-img flex-grow flex-shrink-0 w-full scroll-snap-align-start object-cover ${className}`}
+            />
+          ))
+        }
+      </div>
+      <div
+        class="slider-nav flex absolute bottom-5 left-2/4 transform -translate-x-1/2"
+      >
+        {
+          images.map((image) => (
+            <a href={`#${image}`} class="slider-nav-link" />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</div>
+
+<style>
+  .slider-container {
+  }
+  .slider-wrapper {
+  }
+  .slider-imgs {
+    scrollbar-width: none;
+  }
+
+  .slider-img {
+    /* flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover; */
+  }
+  .slider-nav {
+    column-gap: 1rem;
+  }
+
+  .slider-nav-link {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background: #fff;
+    opacity: 0.75;
+    transition: opacity ease 250ms;
+    border: 1px solid #00000065;
+  }
+  .slider-nav-link:hover {
+    background: #8fd2ff;
+    border-color: #0066a165;
+    opacity: 1;
+  }
+</style>

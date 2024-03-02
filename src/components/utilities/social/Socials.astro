@@ -3,14 +3,15 @@ import SocialItem from "@/components/utilities/social/SocialItem.astro";
 import LinkedInIcon from "@icons/social/Linkedin.astro";
 import GitHubIcon from "@icons/social/GitHub.astro";
 import XIcon from "@icons/social/X.astro";
+import UrlIcon from "@icons/social/Url.astro";
 
 const { class: className } = Astro.props;
 const profiles: ProfilesInterface = Astro.props.profiles;
 
 interface ProfileInterface {
-  username: string;
-  url: string;
-  color: string;
+  username?: string;
+  url?: string;
+  color?: string;
 }
 interface ProfilesInterface {
   [key: string]: ProfileInterface;
@@ -18,27 +19,50 @@ interface ProfilesInterface {
 ---
 
 <section class={`${className}`}>
-  <SocialItem
-    href={profiles["LinkedIn"].url}
-    color={profiles["LinkedIn"].color}
-    text="LinkedIn"
-  >
-    <LinkedInIcon class="size-3.5 md:size-3.5" />
-  </SocialItem>
+  {
+    profiles["Url"] && (
+      <SocialItem
+        href={profiles["Url"].url}
+        color={profiles["Url"].color}
+        text="Url"
+      >
+        <UrlIcon class="size-3.5 md:size-3.5" />
+      </SocialItem>
+    )
+  }
+  {
+    profiles["LinkedIn"] && (
+      <SocialItem
+        href={profiles["LinkedIn"].url}
+        color={profiles["LinkedIn"].color}
+        text="LinkedIn"
+      >
+        <LinkedInIcon class="size-3.5 md:size-3.5" />
+      </SocialItem>
+    )
+  }
 
-  <SocialItem
-    href={profiles["GitHub"].url}
-    text="GitHub"
-    color={profiles["GitHub"].color}
-  >
-    <GitHubIcon class="size-3.5 md:size-3.5" />
-  </SocialItem>
+  {
+    profiles["GitHub"] && (
+      <SocialItem
+        href={profiles["GitHub"].url}
+        text="GitHub"
+        color={profiles["GitHub"].color}
+      >
+        <GitHubIcon class="size-3.5 md:size-3.5" />
+      </SocialItem>
+    )
+  }
 
-  <SocialItem
-    href={profiles["X"].url}
-    color={profiles["X"].color}
-    text="Twitter"
-  >
-    <XIcon class="size-3.5 md:size-3.5" />
-  </SocialItem>
+  {
+    profiles["X"] && (
+      <SocialItem
+        href={profiles["X"].url}
+        color={profiles["X"].color}
+        text="Twitter"
+      >
+        <XIcon class="size-3.5 md:size-3.5" />
+      </SocialItem>
+    )
+  }
 </section>

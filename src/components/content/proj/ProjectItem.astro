@@ -1,0 +1,90 @@
+---
+import "./ProjectItem.css";
+
+import ProjectSlider from "@/components/content/proj/ProjectSlider.astro";
+import Socials from "@/components/utilities/social/Socials.astro";
+import Tags from "@/components/utilities/tags/Tags.astro";
+
+interface Project {
+  name: string;
+  date: string;
+  description: string;
+  tags: string[];
+  url: string;
+  github: string;
+  images: string[];
+}
+
+const project: Project = Astro.props.project;
+const { name, date, description, tags, url, github, images } = project;
+
+let profile;
+---
+
+<article
+  class="project flex items-center justify-center flex-wrap rounded-md p-4 relative"
+>
+  <i class="projec-line-x"></i>
+  <i class="projec-line-y"></i>
+  <div class="project-content basis-2/6 z-20">
+    <h3
+      class="project-title text-[--txt-highlight-1] text-3xl text-balance transition ease-in mb-6 font-semibold"
+    >
+      {name}
+    </h3>
+    <div class="project-details text-xl leading-6">
+      <p
+        class="project-description bg-[--proj-desc-bg-color] rounded-2xl text-base text-[--txt-color-1] py-5 px-2 text-pretty transition ease-in"
+      >
+        {description}
+      </p>
+      <ul class="project-tags flex flex-row flex-wrap gap-1 mt-5">
+        <Tags {tags} />
+      </ul>
+    </div>
+    <footer
+      class="project-links items-center bottom-0 flex gap-4 justify-center mt-6 relative"
+    >
+      {
+        url && (
+          <Socials
+            class="flex flex-wrap  gap-2 mb-4"
+            profiles={
+              (profile = {
+                Url: {
+                  username: "none",
+                  url: url,
+                  color: "#8c35d3",
+                },
+              })
+            }
+          />
+        )
+      }
+      {
+        github && (
+          <Socials
+            class=" flex flex-wrap  gap-2 mb-4"
+            profiles={
+              (profile = {
+                GitHub: {
+                  username: "none",
+                  url: github,
+                  color: "#0A66C2",
+                },
+              })
+            }
+          />
+        )
+      }
+    </footer>
+  </div>
+  <div
+    class="project-images bg-[#649aff] rounded-2xl blur-sm transition ease-in z-10 basis-8/12"
+  >
+    <ProjectSlider
+      images={images}
+      class="project-image aspect-[16/12] rounded-2xl h-full mix-blend-multiply"
+    />
+  </div>
+</article>

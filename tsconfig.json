@@ -4,6 +4,7 @@
     "baseUrl": ".",
     "paths": {
       "@data": ["src/assets/data/resume.json"],
+      "@skills": ["src/assets/data/skills.json"],
       "@icons/*": ["src/assets/icons/*"],
       "@img/*": ["src/assets/img/*"],
       "@/*": ["src/*"]

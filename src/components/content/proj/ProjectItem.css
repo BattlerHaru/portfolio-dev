@@ -1,0 +1,122 @@
+.project {
+  position: relative;
+}
+
+.projec-line-x {
+  display: block;
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.projec-line-x::before {
+  background: var(--proj-line-color);
+  content: "";
+  height: var(--proj-line-x-h);
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  transform: skewX(325deg);
+  transition: 0.5s;
+  width: var(--proj-line-x-w);
+}
+
+.projec-line-x::after {
+  background: var(--proj-line-color);
+  bottom: 0;
+  content: "";
+  height: var(--proj-line-x-h);
+  opacity: 0.8;
+  position: absolute;
+  right: 0;
+  transform: skewX(325deg);
+  transition: 0.5s;
+  width: var(--proj-line-x-w);
+}
+
+.projec-line-y {
+  display: block;
+  inset: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.projec-line-y::before {
+  background: var(--proj-line-color);
+  content: "";
+  height: var(--proj-line-y-h);
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  transform: skewY(65deg);
+  transition: 0.5s;
+  width: var(--proj-line-y-w);
+}
+.projec-line-y::after {
+  background: var(--proj-line-color);
+  bottom: 0;
+  content: "";
+  height: var(--proj-line-y-h);
+  opacity: 0.8;
+  position: absolute;
+  right: 0;
+  transform: skewY(65deg);
+  transition: 0.5s;
+  width: var(--proj-line-y-w);
+}
+
+.project-content {
+}
+
+.project-title {
+}
+
+.project-details {
+}
+
+.project-description {
+  width: calc(100% + 1rem);
+}
+
+.project-tags {
+}
+
+.project-tag {
+}
+
+.project-links {
+}
+
+.project-link {
+}
+
+.project-images {
+}
+
+.project-image {
+}
+
+.project:hover {
+  background: var(--proj-hover-bg-color);
+}
+.project:hover .project-description {
+  background: var(--proj-desc-bg-hover-color);
+}
+.project:hover .project-image {
+  mix-blend-mode: normal;
+}
+.project:hover .project-images {
+  filter: blur(0);
+}
+.project:hover .project-title {
+  color: var(--txt-highlight-2);
+}
+
+.project:hover .projec-line-y::after,
+.project:hover .projec-line-y::before,
+.project:hover .projec-line-x::after,
+.project:hover .projec-line-x::before {
+  background: var(--txt-highlight-2);
+}

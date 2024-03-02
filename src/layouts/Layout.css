@@ -8,7 +8,6 @@
   --txt-color-3: #5d59c2;
 
   /* txt highlight colors */
-
   --txt-highlight-1: #5d59c2;
   --txt-highlight-2: #ec4899;
 
@@ -43,6 +42,9 @@
   --proj-line-x-w: 15rem;
   --proj-line-y-h: 10rem;
   --proj-line-y-w: 0.25rem;
+
+  /* tags */
+  --tag-color: #252525; /* if change, go to Tags.astro and change a const colorDefault */
 }
 body {
   background: var(--bg-color);
