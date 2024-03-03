@@ -1,0 +1,115 @@
+---
+import { Image } from "astro:assets";
+import MenuIcon from "@icons/sections/Menu.astro";
+import logoImg from "@icons//spider-code.svg";
+
+import Toggle from "@/components/shared/toggleTheme/ToggleTheme.astro";
+
+const NavBarItems = [
+  {
+    title: "Home",
+    href: "/#top",
+  },
+  {
+    title: "Experience",
+    href: "/#experience",
+  },
+  {
+    title: "Projects",
+    href: "/#projects",
+  },
+  {
+    title: "About me",
+    href: "/#about",
+  },
+  {
+    title: "Contact",
+    href: "/#contact",
+  },
+];
+---
+
+<script src="./Header.ts"></script>
+<header class="sticky top-0 z-40">
+  <nav class="bg-[--navBar-bg-color]
+      md:px-4">
+    <div
+      class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
+    >
+      <a href={NavBarItems[0].href} class="">
+        <Image class="size-12" src={logoImg} alt="Logo" />
+      </a>
+
+      <button
+        data-collapse-toggle="navbar-default"
+        type="button"
+        class="inline-flex
+          h-10
+          w-10
+          items-center
+          justify-center
+          p-2
+          text-sm
+          focus:outline-none
+          md:hidden"
+        aria-controls="navbar-default"
+        aria-expanded="false"
+        id="menuHamburger"
+      >
+        <span class="sr-only">Open main menu</span>
+        <MenuIcon class="size-8" />
+      </button>
+
+      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+        <ul
+          class="flex
+            flex-col
+            items-center
+            justify-center
+            p-4
+            font-medium
+            md:flex-row
+            md:space-x-8
+            md:p-0"
+        >
+          {
+            NavBarItems.map((menu) => (
+              <li
+                class={`navLink 
+              rounded-t-lg 
+              hover:bg-gradient-to-t 
+              hover:from-[--navLink-bg-hover-color] 
+              hover:to-transparent 
+              border-b-4 
+              border-transparent 
+              hover:border-[--navLink-border-hover-color]
+              transition 
+              text-[--navLink-text-color] 
+              ease-in 
+              ${menu.title === "Home" ? "navLink-active" : ""}
+              `}
+              >
+                <a class="block px-3 py-2" href={menu.href} aria-current="page">
+                  {menu.title}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+      <div class="hidden md:block"><Toggle /></div>
+    </div>
+  </nav>
+</header>
+<style>
+  .navLink-active {
+    font-weight: bold;
+    border-bottom-color: var(--navLink-border-active-color);
+    color: var(--navLink-text-active-color);
+    background: linear-gradient(
+      to bottom,
+      #ffffff00 0%,
+      var(--navLink-bg-active-color) 90%
+    );
+  }
+</style>

@@ -1,0 +1,25 @@
+---
+import MoonFilled from "@icons/sections/MoonFilled.astro";
+import SunFilled from "@icons/sections/SunFilled.astro";
+---
+
+<script src="./ToggleTheme.ts"></script>
+<div
+  class="flex cursor-pointer items-center rounded-full bg-transparent p-2"
+  id="toggle"
+>
+  <div class="sun block text-orange-400 dark:hidden">
+    <SunFilled class="size-8" />
+  </div>
+
+  <div class="moon hidden text-yellow-200 dark:block">
+    <MoonFilled class="size-8" />
+  </div>
+</div>
+
+<style>
+  .sun {
+  }
+  .moon {
+  }
+</style>
