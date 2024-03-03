@@ -4,15 +4,23 @@ import skills from "@/assets/data/skills.json";
 const tags: string[] = Astro.props.tags;
 const SKILLS: { [key: string]: string } = skills;
 const colorDefault = "#252525";
+const assetsDir = "./src/assets/icons/skills/";
 ---
 
 {
   tags.map((tag: string) => (
     <li
       style={`--tag-color: ${SKILLS[tag.toLowerCase().replace(/\s+/g, "-")] ? SKILLS[tag.toLowerCase().replace(/\s+/g, "-")] : colorDefault}`}
-      class={`project-tag bg-[--tag-color] rounded-2xl p-2 hover:scale-105`}
+      class={`project-tag bg-[--tag-color] rounded-2xl p-2 hover:scale-105 cursor-default`}
     >
-      <span class="text-xs font-bold text-white">{`#${tag}`}</span>
+      <div class="flex gap-x-1">
+        <img
+          src={`${assetsDir}/${tag.toLowerCase().replace(/\s+/g, "-")}.svg`}
+          alt=""
+          class="size-4 rounded bg-white/5 "
+        />
+        <span class="text-xs font-bold text-white">{`#${tag}`}</span>
+      </div>
     </li>
   ))
 }

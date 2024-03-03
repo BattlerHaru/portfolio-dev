@@ -26,87 +26,15 @@ const TOOLS: Skill[] = skills.tools;
 ---
 
 <div class="skill-container">
-  <!-- backend -->
-  <div class="skill-section">
-    <div class="cyber-header-group">
-      <h3 class="cyber-header" data-text="backend">backend</h3>
-    </div>
-    <ul class="skill-ul">
-      {
-        BACKEND.map((item) => (
-          <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
-            {item.frameworks && (
-              <ul class="skill-ul">
-                {item.frameworks.map((framework) => (
-                  <li class="skill-li">
-                    <div class="skill-item">
-                      <img
-                        class="skill-img"
-                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                        alt={framework.name}
-                      />
-                      <span class="skill-title">{framework.name}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-  <!-- mobile -->
-  <div class="skill-section">
-    <div class="cyber-header-group">
-      <h3 class="cyber-header" data-text="mobile">mobile</h3>
-    </div>
-    <ul class="skill-ul">
-      {
-        MOBILE.map((item) => (
-          <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
-            {item.frameworks && (
-              <ul class="skill-ul">
-                {item.frameworks.map((framework) => (
-                  <li class="skill-li">
-                    <div class="skill-item">
-                      <img
-                        class="skill-img"
-                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                        alt={framework.name}
-                      />
-                      <span class="skill-title">{framework.name}</span>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
   <!-- frontend -->
   <div class="skill-section">
-    <div class="cyber-header-group">
-      <h3 class="cyber-header" data-text="frontend">frontend</h3>
-    </div>
+    <h3
+      class="skill-header text-3xl text-[--txt-color-3] uppercase tracking-wide"
+      data-text="frontend"
+    >
+      frontend
+    </h3>
+
     <ul class="skill-ul">
       {
         FRONTEND.map((item) => (
@@ -159,14 +87,100 @@ const TOOLS: Skill[] = skills.tools;
       }
     </ul>
   </div>
+  <!-- backend -->
+  <div class="skill-section">
+    <h3
+      class="skill-header text-3xl text-[--txt-color-3] uppercase tracking-wide"
+      data-text="backend"
+    >
+      backend
+    </h3>
+    <ul class="skill-ul">
+      {
+        BACKEND.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+            {item.frameworks && (
+              <ul class="skill-ul">
+                {item.frameworks.map((framework) => (
+                  <li class="skill-li">
+                    <div class="skill-item">
+                      <img
+                        class="skill-img"
+                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                        alt={framework.name}
+                      />
+                      <span class="skill-title">{framework.name}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- mobile -->
+  <div class="skill-section">
+    <h3
+      class="skill-header text-3xl text-[--txt-color-3] uppercase tracking-wide"
+      data-text="mobile"
+    >
+      mobile
+    </h3>
+    <ul class="skill-ul">
+      {
+        MOBILE.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+            {item.frameworks && (
+              <ul class="skill-ul">
+                {item.frameworks.map((framework) => (
+                  <li class="skill-li">
+                    <div class="skill-item">
+                      <img
+                        class="skill-img"
+                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                        alt={framework.name}
+                      />
+                      <span class="skill-title">{framework.name}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
 </div>
 
 <div class="skill-container">
   <!-- databases -->
   <div class="skill-section">
-    <div class="cyber-header-group">
-      <h3 class="cyber-header" data-text="databases">databases</h3>
-    </div>
+    <h3
+      class="skill-header text-3xl text-[--txt-color-3] uppercase tracking-wide"
+      data-text="databases"
+    >
+      databases
+    </h3>
+
     <ul class="skill-ul">
       {
         DATABASES.map((item) => (
@@ -186,9 +200,12 @@ const TOOLS: Skill[] = skills.tools;
   </div>
   <!-- tools -->
   <div class="skill-section">
-    <div class="cyber-header-group">
-      <h3 class="cyber-header" data-text="tools">tools</h3>
-    </div>
+    <h3
+      class="skill-header text-3xl text-[--txt-color-3] uppercase tracking-wide"
+      data-text="tools"
+    >
+      tools
+    </h3>
     <ul class="skill-ul">
       {
         TOOLS.map((item) => (

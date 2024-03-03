@@ -130,3 +130,7 @@
 .skill-item:hover {
   background: var(--skill-hover-color);
 }
+
+.skill-section:hover .skill-header {
+  color: var(--txt-color-4);
+}
