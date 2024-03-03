@@ -1,0 +1,132 @@
+.skill-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: min(15rem, 2rem);
+  justify-content: center;
+  margin-top: 1rem;
+  position: relative;
+  width: 100%;
+}
+
+.skill-section {
+  border-radius: 1rem;
+  border: 2px solid var(--skill-section-bg-border-color);
+  position: relative;
+  text-align: center;
+  transition: 0.3s ease-in;
+}
+
+.skill-section:hover {
+  border-color: var(--skill-section-bg-border-color-hover);
+  box-shadow: 0px 0px 2rem 2px var(--skill-line-color-hover) inset;
+}
+
+.skill-ul {
+  list-style-type: none;
+  padding: 0;
+  position: relative;
+}
+
+.skill-ul .skill-ul::before {
+  border-left: var(--skill-line-size) solid var(--skill-line-color);
+  content: "";
+  left: 49.2%;
+  position: absolute;
+  top: -2%;
+  width: 0;
+}
+
+.skill-li {
+  display: grid;
+  float: left;
+  padding: 0.5rem 0.5rem;
+  place-items: center;
+  position: relative;
+}
+
+.skill-item {
+  background: var(--skill-item-bg-color);
+  padding: 0.25rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.skill-title {
+  display: none;
+}
+.skill-item,
+.skill-img {
+  height: 4.68rem;
+  width: 4.68rem;
+}
+
+.skill-img {
+  aspect-ratio: 4/4;
+  filter: grayscale(100%);
+  object-fit: cover;
+  object-position: center;
+  position: relative;
+  transition:
+    filter 0.3s ease,
+    transform 0.3s ease;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.skill-item,
+.skill-img {
+  clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+.skill-li::before,
+.skill-li::after {
+  border-top: var(--skill-line-size) solid var(--skill-line-color);
+  content: "";
+  height: 1rem;
+  position: absolute;
+  right: 50%;
+  top: 0;
+  width: 50%;
+}
+
+.skill-li::after {
+  border-left: var(--skill-line-size) solid;
+  border-left-color: var(--skill-line-color);
+  left: 49.2%;
+  right: auto;
+}
+
+.skill-li:only-child::after,
+.skill-li:only-child::before {
+  content: "";
+  display: none;
+}
+
+.skill-li:only-child {
+  padding-top: 0;
+}
+
+.skill-li:first-child::before,
+.skill-li:last-child::after {
+  border: 0 none;
+}
+
+.skill-li:last-child::before {
+  border-radius: 0 var(--skill-line-size) 0 0;
+  border-right: var(--skill-line-size) solid var(--skill-line-color);
+}
+
+.skill-li:first-child::after {
+  border-radius: var(--skill-line-size) 0 0 0;
+}
+
+.skill-img:hover {
+  filter: drop-shadow(0 0 0.6rem var(--skill-hover-color)) grayscale(0%);
+  transform: scale(1.055);
+}
+
+.skill-item:hover {
+  background: var(--skill-hover-color);
+}

@@ -4,9 +4,13 @@ import SectionContainer from "@/components/utilities/SectionContainer.astro";
 import Home from "@/components/content/Home.astro";
 import Experience from "@/components/content/exp/Experience.astro";
 import Projects from "@/components/content/proj/Projects.astro";
+import Skills from "@/components/content/skills/Skills.astro";
+import AboutMe from "@/components/content/aboutMe/AboutMe.astro";
 
 import BriefcaseIcon from "@icons/sections/Briefcase.astro";
 import CodeIcon from "@icons/sections/Code.astro";
+import StarsFilledIcon from "@icons/sections/StarsFilled.astro";
+import UserFilledIcon from "@icons/sections/UserFilled.astro";
 ---
 
 <Layout title="Portfolio Test" description="description.">
@@ -34,7 +38,60 @@ import CodeIcon from "@icons/sections/Code.astro";
       </h2>
       <Projects />
     </SectionContainer>
+
+    <SectionContainer class="" id="skills">
+      <div
+        class="skill-accordion text-[--txt-color-1] border-2 border-[--bg-color-3] hover:border-[--txt-color-3] rounded-lg px-4 pb-4"
+      >
+        <input
+          class="opacity-0 skill-accordion-input"
+          type="checkbox"
+          id="skills-accordion-input"
+          checked
+        />
+        <label
+          for="skills-accordion-input"
+          class="flex
+            text-[--txt-color-3]
+            text-4xl
+            cursor-pointer
+            justify-between
+            transition-all duration-350
+            mr-8"
+          ><h2
+            class="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
+          >
+            <StarsFilledIcon class="size-7" />
+            Skills
+          </h2>
+          <span
+            class="absolute right-12 mt-1 rotate-90 skill-accordion-arrow origin-center text-[--bg-color-3]"
+            >&#x276F;</span
+          ></label
+        >
+        <div
+          class="skill-accordion-content transition-all duration-350 overflow-hidden max-h-0"
+        >
+          <Skills />
+        </div>
+      </div>
+      <script src="./Index.ts"></script>
+    </SectionContainer>
+
+    <SectionContainer class="" id="about">
+      <h2
+        class="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
+      >
+        <UserFilledIcon class="size-7" />
+        About me
+      </h2>
+      <AboutMe />
+    </SectionContainer>
   </main>
 </Layout>
 
-<style></style>
+<style>
+  .skill-accordion:hover .skill-accordion-arrow {
+    color: var(--txt-color-3);
+  }
+</style>

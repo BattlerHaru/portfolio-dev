@@ -1,0 +1,83 @@
+---
+import { basics } from "@data";
+
+// import { Image } from "astro:assets";
+// import profileImg from "@/assets/profile.png";
+interface ParagraphPart {
+  text: string;
+  type: "normal" | "italic" | "highlight";
+}
+
+interface Paragraphs {
+  [part: string]: ParagraphPart;
+}
+
+interface Summary {
+  paragraph1: Paragraphs;
+  paragraph2: Paragraphs;
+  paragraph3: Paragraphs;
+}
+
+const SUMMARY: Summary = basics.summary;
+---
+
+<section class="flex flex-col items-center justify-center gap-8 md:flex-row">
+  <div
+    class="order-2
+    text-pretty
+    text-[txt-color-1]
+    md:order-1
+    [&>p>strong]:font-semibold
+    [&>p>strong]:text-[--txt-color-3]
+    [&>p]:mb-4"
+  >
+    <p class="">
+      {
+        Object.values(SUMMARY.paragraph1).map((part) =>
+          part.type === "highlight" ? (
+            <strong>{part.text}</strong>
+          ) : part.type === "italic" ? (
+            <em class="italic">{part.text}</em>
+          ) : (
+            part.text
+          ),
+        )
+      }
+    </p>
+
+    <p>
+      {
+        Object.values(SUMMARY.paragraph2).map((part) =>
+          part.type === "highlight" ? (
+            <strong>{part.text}</strong>
+          ) : part.type === "italic" ? (
+            <em class="italic">{part.text}</em>
+          ) : (
+            part.text
+          ),
+        )
+      }
+    </p>
+
+    <p>
+      {
+        Object.values(SUMMARY.paragraph3).map((part) =>
+          part.type === "highlight" ? (
+            <strong>{part.text}</strong>
+          ) : part.type === "italic" ? (
+            <em class="italic">{part.text}</em>
+          ) : (
+            part.text
+          ),
+        )
+      }
+    </p>
+  </div>
+
+  <!-- <Image
+    class="order-1 mb-4 size-64 rounded-full md:order-2"
+    src={profileImg}
+    alt="logo"
+    id="img"
+  /> -->
+</section>

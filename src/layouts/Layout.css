@@ -12,7 +12,7 @@
   --txt-color-1: #111111;
   --txt-color-2: #0050e4;
   --txt-color-3: #1e1bda;
-  --txt-color-4: rgb(255, 38, 147);
+  --txt-color-4: #ff2693;
 
   /* gradient colors */
   --grad-1: #add8ff;
@@ -49,6 +49,18 @@
   --proj-hover-bg-color: var(--bg-color-2);
   --proj-desc-bg-color: var(--bg-color-3);
   --proj-desc-bg-hover-color: var(--bg-hover-color-2);
+
+  /* Skills */
+  --skill-hover-color: #ffffff;
+  --skill-line-color-hover: #517aff;
+
+  --skill-line-color: #3acaec;
+
+  --skill-item-bg-color: #ffffff17;
+  --skill-line-height: 0.3rem;
+  --skill-line-size: 0.25rem;
+  --skill-section-bg-border-color-hover: #cab9a2;
+  --skill-section-bg-border-color: #3acaec;
 
   /* NavBar */
   --navBar-bg-color: var(--header-color-1);

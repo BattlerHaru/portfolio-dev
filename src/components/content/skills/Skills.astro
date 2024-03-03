@@ -1,0 +1,209 @@
+---
+import "./Skills.css";
+import { skills } from "@data";
+
+interface Skill {
+  name: string;
+  keywords: string[];
+  frameworks?: Skill[];
+}
+
+interface Skills {
+  backend: Skill[];
+  frontend: Skill[];
+  mobile: Skill[];
+  databases: Skill[];
+  tools: Skill[];
+}
+
+const assetsDir = "./src/assets/icons/skills/";
+
+const BACKEND: Skill[] = skills.backend;
+const FRONTEND: Skill[] = skills.frontend;
+const MOBILE: Skill[] = skills.mobile;
+const DATABASES: Skill[] = skills.databases;
+const TOOLS: Skill[] = skills.tools;
+---
+
+<div class="skill-container">
+  <!-- backend -->
+  <div class="skill-section">
+    <div class="cyber-header-group">
+      <h3 class="cyber-header" data-text="backend">backend</h3>
+    </div>
+    <ul class="skill-ul">
+      {
+        BACKEND.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+            {item.frameworks && (
+              <ul class="skill-ul">
+                {item.frameworks.map((framework) => (
+                  <li class="skill-li">
+                    <div class="skill-item">
+                      <img
+                        class="skill-img"
+                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                        alt={framework.name}
+                      />
+                      <span class="skill-title">{framework.name}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- mobile -->
+  <div class="skill-section">
+    <div class="cyber-header-group">
+      <h3 class="cyber-header" data-text="mobile">mobile</h3>
+    </div>
+    <ul class="skill-ul">
+      {
+        MOBILE.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+            {item.frameworks && (
+              <ul class="skill-ul">
+                {item.frameworks.map((framework) => (
+                  <li class="skill-li">
+                    <div class="skill-item">
+                      <img
+                        class="skill-img"
+                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                        alt={framework.name}
+                      />
+                      <span class="skill-title">{framework.name}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- frontend -->
+  <div class="skill-section">
+    <div class="cyber-header-group">
+      <h3 class="cyber-header" data-text="frontend">frontend</h3>
+    </div>
+    <ul class="skill-ul">
+      {
+        FRONTEND.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+            {item.frameworks && (
+              <ul class="skill-ul">
+                {item.frameworks.map((framework) => (
+                  <li class="skill-li">
+                    <div class="skill-item">
+                      <img
+                        class="skill-img"
+                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                        alt={framework.name}
+                      />
+                      <span class="skill-title">{framework.name}</span>
+                    </div>
+
+                    {framework.frameworks && (
+                      <ul class="skill-ul">
+                        {framework.frameworks.map((subframework) => (
+                          <li class="skill-li">
+                            <div class="skill-item">
+                              <img
+                                class="skill-img"
+                                src={`${assetsDir}/${subframework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                                alt={subframework.name}
+                              />
+                              <span class="skill-title">
+                                {subframework.name}
+                              </span>
+                            </div>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<div class="skill-container">
+  <!-- databases -->
+  <div class="skill-section">
+    <div class="cyber-header-group">
+      <h3 class="cyber-header" data-text="databases">databases</h3>
+    </div>
+    <ul class="skill-ul">
+      {
+        DATABASES.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+  <!-- tools -->
+  <div class="skill-section">
+    <div class="cyber-header-group">
+      <h3 class="cyber-header" data-text="tools">tools</h3>
+    </div>
+    <ul class="skill-ul">
+      {
+        TOOLS.map((item) => (
+          <li class="skill-li">
+            <div class="skill-item">
+              <img
+                class="skill-img"
+                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+                alt={item.name}
+              />
+              <span class="skill-title">{item.name}</span>
+            </div>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
