@@ -26,7 +26,22 @@ const images: string[] = Astro.props.images;
       >
         {
           images.map((image) => (
-            <a href={`#${image}`} class="slider-nav-link" />
+            <a
+              href={`#${image}`}
+              class={`
+              slider-nav-link 
+              w-4 
+              h-4 
+              inline-block 
+              opacity-75 
+              hover:opacity-100 
+              bg-[--proj-img-slider-navLink-bg-color] 
+              hover:bg-[--proj-img-slider-navLink-hover-bg-color] 
+              border 
+              border-[--proj-img-slider-navLink-border-color] 
+              hover:border-[--proj-img-slider-navLink-hover-border-color] 
+              `}
+            />
           ))
         }
       </div>
@@ -44,27 +59,15 @@ const images: string[] = Astro.props.images;
   }
 
   .slider-img {
-    /* flex: 1 0 100%;
-    scroll-snap-align: start;
-    object-fit: cover; */
   }
   .slider-nav {
     column-gap: 1rem;
   }
 
   .slider-nav-link {
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
     border-radius: 50%;
-    background: #fff;
-    opacity: 0.75;
     transition: opacity ease 250ms;
-    border: 1px solid #00000065;
   }
   .slider-nav-link:hover {
-    background: #8fd2ff;
-    border-color: #0066a165;
-    opacity: 1;
   }
 </style>

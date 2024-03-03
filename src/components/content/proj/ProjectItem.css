@@ -111,12 +111,12 @@
   filter: blur(0);
 }
 .project:hover .project-title {
-  color: var(--txt-highlight-2);
+  color: var(--txt-color-3);
 }
 
 .project:hover .projec-line-y::after,
 .project:hover .projec-line-y::before,
 .project:hover .projec-line-x::after,
 .project:hover .projec-line-x::before {
-  background: var(--txt-highlight-2);
+  background: var(--txt-color-4);
 }

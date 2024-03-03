@@ -3,9 +3,8 @@
   border-color: var(--exp-list-item-hover-color);
 }
 .exp-content:hover .exp-date-hover {
-  color: var(--txt-highlight-2);
-  opacity: 0.75;
+  color: var(--txt-color-4);
 }
 .exp-content:hover .exp-position-hover {
-  color: var(--txt-highlight-2);
+  color: var(--txt-color-4);
 }

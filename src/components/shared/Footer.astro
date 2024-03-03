@@ -2,25 +2,23 @@
 const currentYear = new Date().getFullYear();
 ---
 
-<footer
-  class="rounded-lg shadow m-4 bg-[--footer-bg-color] border border-[--footer-border-color]"
->
+<footer class="rounded-lg shadow m-4 bg-[--footer-bg-color] justify-center">
   <div
     class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between"
   >
-    <span class="text-base text-[--txt-color-1] sm:text-center"
+    <span class="text-base text-[--footer-txt-color-1] sm:text-center"
       >{`${currentYear} - `}
-      <a href="/#home" class="hover:underline hover:text-[--txt-highlight-1]"
+      <a href="/#home" class="hover:underline hover:text-[--footer-txt-color-2]"
         >Saúl Villeda</a
       >.
     </span>
-    <div
-      class="flex flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0"
-    >
-      <span class="text-[--txt-highlight-1] hover:text-[--txt-highlight-2]">
+    <div class="flex flex-wrap items-center mt-3 text-sm font-medium sm:mt-0">
+      <span
+        class="text-[--footer-txt-color-1] hover:text-[--footer-txt-color-2]"
+      >
         Be Amazing,
       </span><span
-        class="text-[--txt-highlight-1] hover:text-[--txt-highlight-2]"
+        class="text-[--footer-txt-color-1] hover:text-[--footer-txt-color-2]"
       >
         &nbsp;Be Yourself
       </span>
