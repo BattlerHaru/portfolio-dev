@@ -1,0 +1,81 @@
+---
+import SendIcon from "@icons/sections/Send.astro";
+const mailBase = "test@test.com";
+---
+
+<div class="contact-container flex flex-col">
+  <form action="" class="">
+    <div class="contact-group flex flex-col w-6/12">
+      <label
+        for="contactInputSubject"
+        class="contact-input-subject text-xl text-[--txt-color-1] font-medium"
+        >Subject</label
+      >
+      <input
+        class="w-full px-3 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[--txt-color-2] focus:ring-1 focus:ring-[--txt-color-2] text-[--txt-color-5]"
+        type="text"
+        name="contactInputSubject"
+        id="contactInputSubject"
+        autocomplete="off"
+        required
+      />
+    </div>
+    <div class="contact-group flex flex-col w-6/12">
+      <label
+        for="contactInputMessage"
+        class="text-xl text-[--txt-color-1] font-medium">Leave a message</label
+      >
+      <textarea
+        class="w-full px-3 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[--txt-color-2] focus:ring-1 focus:ring-[--txt-color-2] text-[--txt-color-5]"
+        name="contactInputMessage"
+        id="contactInputMessage"
+        cols="30"
+        autocomplete="off"
+        rows="5"
+        required></textarea>
+      <input
+        type="hidden"
+        name="mailBase"
+        class="hidden"
+        value={mailBase}
+        id="mailBase"
+      />
+    </div>
+    <button
+      class="contact-btn mt-4 relative flex items-center justify-center p-2 bg-black overflow-hidden rounded-lg group hover:bg-gradient-to-br from-cyan-500 hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none"
+      id="contactBtn"
+    >
+      <SendIcon class="size-3.5" />
+      <span class="relative ml-1 rounded-md"> Send Message</span>
+    </button>
+  </form>
+</div>
+
+<script>
+  const contactBtn = document.getElementById("contactBtn") as HTMLButtonElement;
+  const contactInputSubject = document.getElementById(
+    "contactInputSubject",
+  ) as HTMLInputElement;
+  const contactInputMessage = document.getElementById(
+    "contactInputMessage",
+  ) as HTMLInputElement;
+  const contactMailBase = document.getElementById(
+    "mailBase",
+  ) as HTMLInputElement;
+
+  const sendEmail = (mailSender: string, subject: string, body: string) => {
+    const mailFormat = `mailto:${mailSender}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = mailFormat;
+  };
+
+  contactBtn.addEventListener("click", (event) => {
+    event.preventDefault();
+    sendEmail(
+      contactMailBase.value,
+      contactInputSubject.value,
+      contactInputMessage.value,
+    );
+    contactInputSubject.value = "";
+    contactInputMessage.value = "";
+  });
+</script>

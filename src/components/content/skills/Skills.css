@@ -63,7 +63,7 @@
 
 .skill-img {
   aspect-ratio: 4/4;
-  filter: grayscale(100%);
+  /* filter: grayscale(100%); */
   object-fit: cover;
   object-position: center;
   position: relative;
@@ -94,7 +94,7 @@
 .skill-li::after {
   border-left: var(--skill-line-size) solid;
   border-left-color: var(--skill-line-color);
-  left: 49.2%;
+  left: 50%;
   right: auto;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .skill-img:hover {
-  filter: drop-shadow(0 0 0.6rem var(--skill-hover-color)) grayscale(0%);
+  filter: drop-shadow(0 0 0.6rem var(--skill-hover-color));
   transform: scale(1.055);
 }
 

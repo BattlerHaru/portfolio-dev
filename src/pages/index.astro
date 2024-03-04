@@ -6,11 +6,13 @@ import Experience from "@/components/content/exp/Experience.astro";
 import Projects from "@/components/content/proj/Projects.astro";
 import Skills from "@/components/content/skills/Skills.astro";
 import AboutMe from "@/components/content/aboutMe/AboutMe.astro";
+import Contact from "@/components/content/contact/Contact.astro";
 
 import BriefcaseIcon from "@icons/sections/Briefcase.astro";
 import CodeIcon from "@icons/sections/Code.astro";
 import StarsFilledIcon from "@icons/sections/StarsFilled.astro";
 import UserFilledIcon from "@icons/sections/UserFilled.astro";
+import MailForwardIcon from "@icons/sections/MailForward.astro";
 ---
 
 <Layout title="Portfolio Test" description="description.">
@@ -39,7 +41,17 @@ import UserFilledIcon from "@icons/sections/UserFilled.astro";
       <Projects />
     </SectionContainer>
 
-    <SectionContainer class="" id="skills">
+    <!-- <SectionContainer class="" id="skills" /> -->
+
+    <SectionContainer class="" id="about">
+      <h2
+        class="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
+      >
+        <UserFilledIcon class="size-7" />
+        About me
+      </h2>
+      <AboutMe />
+      <!-- Skills Optional -->
       <div
         class="skill-accordion text-[--txt-color-1] border-2 border-[--bg-color-3] hover:border-[--txt-color-3] rounded-lg px-4 pb-4"
       >
@@ -79,14 +91,14 @@ import UserFilledIcon from "@icons/sections/UserFilled.astro";
       <script src="./Index.ts"></script>
     </SectionContainer>
 
-    <SectionContainer class="" id="about">
+    <SectionContainer class="" id="contact">
       <h2
         class="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
       >
-        <UserFilledIcon class="size-7" />
-        About me
+        <MailForwardIcon class="size-7" />
+        Contact
       </h2>
-      <AboutMe />
+      <Contact />
     </SectionContainer>
   </main>
 </Layout>
