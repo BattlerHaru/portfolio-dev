@@ -72,8 +72,17 @@ const mailBase: string = basics.email;
 </div>
 
 <style>
+  .error-border:focus {
+    border-color: #ef4444;
+  }
+  .error-border {
+    border-color: #ef4444;
+  }
+  .error-ring {
+    --tw-ring-color: #ef4444;
+  }
+
   .contact-container {
-    /* background: var(--bg-color-3); */
   }
 
   .contact-line-x {
@@ -166,6 +175,7 @@ const mailBase: string = basics.email;
     "contactErrorSubject",
   ) as HTMLInputElement;
   let timer: number | undefined;
+  let isContactValid = false;
 
   const sendEmail = (subject: string, body: string) => {
     const mailSender: string = contactMailBase.value;
@@ -179,8 +189,14 @@ const mailBase: string = basics.email;
     timer = setTimeout(() => {
       if (contactInputSubject.value.trim().length < 3) {
         contactErrorSubject.classList.remove("hidden");
+        contactInputSubject.classList.add("error-border");
+        contactInputSubject.classList.add("error-ring");
+        isContactValid = false;
       } else {
         contactErrorSubject.classList.add("hidden");
+        contactInputSubject.classList.remove("error-border");
+        contactInputSubject.classList.remove("error-ring");
+        isContactValid = true;
       }
     }, 500);
   });
@@ -190,18 +206,21 @@ const mailBase: string = basics.email;
     timer = setTimeout(() => {
       if (contactInputMessage.value.trim().length < 3) {
         contactErrorMessage.classList.remove("hidden");
+        contactInputMessage.classList.add("error-border");
+        contactInputMessage.classList.add("error-ring");
+        isContactValid = false;
       } else {
         contactErrorMessage.classList.add("hidden");
+        contactInputMessage.classList.remove("error-border");
+        contactInputMessage.classList.remove("error-ring");
+        isContactValid = true;
       }
     }, 500);
   });
 
   contactBtn.addEventListener("click", (event) => {
     event.preventDefault();
-    if (
-      contactInputSubject.value.trim().length < 3 &&
-      contactInputMessage.value.trim().length < 3
-    ) {
+    if (isContactValid) {
       sendEmail(contactInputSubject.value, contactInputMessage.value);
       contactInputSubject.value = "";
       contactInputMessage.value = "";
