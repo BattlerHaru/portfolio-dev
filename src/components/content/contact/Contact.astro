@@ -1,5 +1,6 @@
 ---
 import { basics } from "@data";
+import "./Contact.css";
 import SendIcon from "@icons/sections/Send.astro";
 const mailBase: string = basics.email;
 ---
@@ -7,30 +8,65 @@ const mailBase: string = basics.email;
 <div class="contact-container flex flex-col rounded-md p-6 overflow-hidden">
   <form
     action=""
-    class="contact-form relative p-8 bg-[--bg-color-3] rounded-lg"
+    class="contact-form relative p-8 bg-[--contact-bg-color] rounded-lg"
   >
     <i class="contact-line-x"></i>
     <i class="contact-line-y"></i>
-    <div class="contact-text rounded-md bg-[--proj-desc-bg-hover-color] p-2">
-      <p class="text-balance text-lg">
-        Ready for turn your ideas into exceptional digital experiences? send me
-        an email 📣
+    <div
+      class="contact-group p-2 flex rounded-md text-balance bg-[--contact-header-bg-color]"
+    >
+      <p
+        class=`
+        z-20 
+        text-lg 
+        text-[--contact-txt-color] `
+      >
+        📣 Ready for turn your ideas into exceptional digital experiences? send
+        me an email.
       </p>
     </div>
+    <br />
     <div class="contact-group flex flex-col">
       <label
         for="contactInputSubject"
-        class="contact-input-subject text-xl text-[--txt-color-1] z-20"
+        class=`
+        z-20 
+        text-lg 
+        text-[--contact-txt-color] `
         >Let me know how I can help you <em
-          class="text-xs text-[--txt-color-1] z-20">(subject)</em
+          class=`
+          z-20 
+          text-xs 
+          text-[--contact-txt-color] `
+          >(subject line)</em
         ></label
       >
-      <span id="contactErrorSubject" class="hidden text-red-500 z-20"
+      <span
+        id="contactErrorSubject"
+        class=`
+      hidden 
+      z-20 
+      text-[--contact-txt-error-color]`
         >The subject is required</span
       >
-
       <input
-        class="w-full px-3 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[--txt-color-2] focus:ring-1 focus:ring-[--txt-color-2] text-[--txt-color-5] z-20"
+        class=`
+        w-full 
+        px-3 
+        py-2 
+        z-20 
+        rounded-md 
+        bg-[--contact-input-bg-color] 
+        text-[--txt-color-5] 
+        border-2 
+        border-[--contact-input-border-color] 
+        focus:outline-none 
+        focus:border-[--contact-input-border-hover-color] 
+        focus:ring-1 
+        focus:ring-[--contact-input-border-hover-color] 
+        focus:bg-[--contact-input-bg-hover-color] 
+        hover:bg-[--contact-input-bg-hover-color] 
+        `
         type="text"
         name="contactInputSubject"
         id="contactInputSubject"
@@ -39,15 +75,36 @@ const mailBase: string = basics.email;
       />
     </div>
     <div class="contact-group flex flex-col">
-      <label for="contactInputMessage" class="text-xl text-[--txt-color-1] z-20"
-        >Leave a message</label
+      <label
+        for="contactInputMessage"
+        class="text-lg text-[--contact-txt-color] z-20">Leave a message</label
       >
-      <span id="contactErrorMessage" class="hidden text-red-500 z-20"
+      <span
+        id="contactErrorMessage"
+        class=`
+      hidden 
+      z-20 
+      text-[--contact-txt-error-color]`
         >The message is required</span
       >
       <textarea
-        class="w-full px-3 py-2 border-2 border-gray-300 rounded-md focus:outline-none focus:border-[--txt-color-2] focus:ring-1 focus:ring-[--txt-color-2] text-[--txt-color-5] z-20"
-        name="contactInputMessage"
+        class=`
+        w-full 
+        px-3 
+        py-2 
+        z-20 
+        rounded-md 
+        bg-[--contact-input-bg-color] 
+        text-[--txt-color-5] 
+        border-2 
+        border-[--contact-input-border-color] 
+        focus:outline-none 
+        focus:border-[--contact-input-border-hover-color] 
+        focus:ring-1 
+        focus:ring-[--contact-input-border-hover-color] 
+        focus:bg-[--contact-input-bg-hover-color] 
+        hover:bg-[--contact-input-bg-hover-color] 
+        `
         id="contactInputMessage"
         cols="30"
         autocomplete="off"
@@ -62,7 +119,25 @@ const mailBase: string = basics.email;
       />
     </div>
     <button
-      class="contact-btn mt-4 right-0 flex items-center justify-center p-2 bg-black overflow-hidden rounded-lg group hover:bg-gradient-to-br from-cyan-500 hover:to-blue-500 hover:text-white text-white focus:ring-4 focus:outline-none z-20"
+      class=`
+      contact-btn
+      font-medium
+      z-20
+      mt-4
+      right-0
+      p-2
+      rounded-lg
+      flex
+      items-center
+      justify-center
+      bg-[--contact-btn-bg-color]
+      text-[--contact-btn-txt-color]
+      group
+      hover:bg-gradient-to-br
+      from-[--contact-btn-bg-grad-color-1]
+      hover:to-[--contact-btn-bg-grad-color-2]
+      hover:text-[--contact-btn-txt-hover-color]
+      `
       id="contactBtn"
     >
       <SendIcon class="size-3.5" />
@@ -70,160 +145,4 @@ const mailBase: string = basics.email;
     </button>
   </form>
 </div>
-
-<style>
-  .error-border:focus {
-    border-color: #ef4444;
-  }
-  .error-border {
-    border-color: #ef4444;
-  }
-  .error-ring {
-    --tw-ring-color: #ef4444;
-  }
-
-  .contact-container {
-  }
-
-  .contact-line-x {
-    display: block;
-    inset: 0;
-    overflow: hidden;
-    position: absolute;
-  }
-
-  .contact-line-x::before {
-    background: var(--proj-line-color);
-    content: "";
-    height: var(--proj-line-x-h);
-    left: 0;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    transform: skewX(325deg);
-    transition: 0.5s;
-    width: var(--proj-line-x-w);
-  }
-
-  .contact-line-x::after {
-    background: var(--proj-line-color);
-    bottom: 0;
-    content: "";
-    height: var(--proj-line-x-h);
-    opacity: 0.8;
-    position: absolute;
-    right: 0;
-    transform: skewX(325deg);
-    transition: 0.5s;
-    width: var(--proj-line-x-w);
-  }
-
-  .contact-line-y {
-    display: block;
-    inset: 0;
-    position: absolute;
-    overflow: hidden;
-  }
-
-  .contact-line-y::before {
-    background: var(--proj-line-color);
-    content: "";
-    height: var(--proj-line-y-h);
-    left: 0;
-    opacity: 0.8;
-    position: absolute;
-    top: 0;
-    transform: skewY(65deg);
-    transition: 0.5s;
-    width: var(--proj-line-y-w);
-  }
-  .contact-line-y::after {
-    background: var(--proj-line-color);
-    bottom: 0;
-    content: "";
-    height: var(--proj-line-y-h);
-    opacity: 0.8;
-    position: absolute;
-    right: 0;
-    transform: skewY(65deg);
-    transition: 0.5s;
-    width: var(--proj-line-y-w);
-  }
-  .contact-form:hover .contact-line-y::after,
-  .contact-form:hover .contact-line-y::before,
-  .contact-form:hover .contact-line-x::after,
-  .contact-form:hover .contact-line-x::before {
-    background: var(--txt-color-4);
-  }
-</style>
-
-<script>
-  const contactBtn = document.getElementById("contactBtn") as HTMLButtonElement;
-  const contactInputSubject = document.getElementById(
-    "contactInputSubject",
-  ) as HTMLInputElement;
-  const contactInputMessage = document.getElementById(
-    "contactInputMessage",
-  ) as HTMLInputElement;
-  const contactMailBase = document.getElementById(
-    "mailBase",
-  ) as HTMLInputElement;
-  const contactErrorMessage = document.getElementById(
-    "contactErrorMessage",
-  ) as HTMLInputElement;
-  const contactErrorSubject = document.getElementById(
-    "contactErrorSubject",
-  ) as HTMLInputElement;
-  let timer: number | undefined;
-  let isContactValid = false;
-
-  const sendEmail = (subject: string, body: string) => {
-    const mailSender: string = contactMailBase.value;
-
-    const mailFormat = `mailto:${mailSender}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailFormat;
-  };
-
-  contactInputSubject.addEventListener("input", () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      if (contactInputSubject.value.trim().length < 3) {
-        contactErrorSubject.classList.remove("hidden");
-        contactInputSubject.classList.add("error-border");
-        contactInputSubject.classList.add("error-ring");
-        isContactValid = false;
-      } else {
-        contactErrorSubject.classList.add("hidden");
-        contactInputSubject.classList.remove("error-border");
-        contactInputSubject.classList.remove("error-ring");
-        isContactValid = true;
-      }
-    }, 500);
-  });
-
-  contactInputMessage.addEventListener("input", () => {
-    clearTimeout(timer);
-    timer = setTimeout(() => {
-      if (contactInputMessage.value.trim().length < 3) {
-        contactErrorMessage.classList.remove("hidden");
-        contactInputMessage.classList.add("error-border");
-        contactInputMessage.classList.add("error-ring");
-        isContactValid = false;
-      } else {
-        contactErrorMessage.classList.add("hidden");
-        contactInputMessage.classList.remove("error-border");
-        contactInputMessage.classList.remove("error-ring");
-        isContactValid = true;
-      }
-    }, 500);
-  });
-
-  contactBtn.addEventListener("click", (event) => {
-    event.preventDefault();
-    if (isContactValid) {
-      sendEmail(contactInputSubject.value, contactInputMessage.value);
-      contactInputSubject.value = "";
-      contactInputMessage.value = "";
-    }
-  });
-</script>
+<script src="./Contact.ts"></script>

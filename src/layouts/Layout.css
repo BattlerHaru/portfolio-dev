@@ -13,6 +13,11 @@
   --txt-color-2: #0050e4;
   --txt-color-3: #1e1bda;
   --txt-color-4: #ff2693;
+  --txt-color-5: #121212;
+  --txt-color-6: #3a85ff;
+
+  /* txt error */
+  --txt-error-color-1: #ef4444;
 
   /* gradient colors */
   --grad-1: #add8ff;
@@ -49,6 +54,22 @@
   --proj-hover-bg-color: var(--bg-color-2);
   --proj-desc-bg-color: var(--bg-color-3);
   --proj-desc-bg-hover-color: var(--bg-hover-color-2);
+
+  /* Contact  */
+  --contact-bg-color: #e8eaff;
+  --contact-header-bg-color: #c8ccf8;
+  --contact-header-txt-color: var(--txt-color-1);
+  --contact-txt-color: var(--txt-color-1);
+  --contact-txt-error-color: var(--txt-error-color-1);
+  --contact-input-bg-color: var(--contact-bg-color);
+  --contact-input-bg-hover-color: #ffffff;
+  --contact-input-border-color: #868686;
+  --contact-input-border-hover-color: var(--txt-color-2);
+  --contact-btn-bg-color: var(--contact-header-bg-color);
+  --contact-btn-txt-color: var(--txt-color-1);
+  --contact-btn-txt-hover-color: #f8f8f8;
+  --contact-btn-bg-grad-color-1: var(--grad-3);
+  --contact-btn-bg-grad-color-2: var(--grad-5);
 
   /* Skills */
   --skill-hover-color: #ffffff;
@@ -107,7 +128,6 @@
   --txt-color-2: #08f9ff;
   --txt-color-3: #5d59c2;
   --txt-color-4: #ec4899;
-  --txt-color-5: #121212;
 
   /* gradient colors */
   --grad-1: #f9f5ff;
@@ -140,6 +160,13 @@
   --proj-hover-bg-color: var(--bg-color-2);
   --proj-desc-bg-color: var(--bg-color-3);
   --proj-desc-bg-hover-color: var(--bg-hover-color-2);
+
+  /* Contact */
+  --contact-bg-color: var(--bg-color-3);
+  --contact-header-bg-color: #5e5e5e;
+  /* --contact-btn-bg-color: var(--contact-header-bg-color); */
+  --contact-input-border-color: var(--txt-color-1);
+  --contact-input-border-hover-color: var(--txt-color-6);
 
   /* NavBar */
   --navBar-bg-color: var(--header-color-1);

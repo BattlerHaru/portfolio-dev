@@ -1,21 +1,21 @@
 ---
+import { Image } from "astro:assets";
 import { basics } from "@data";
+import profileImg from "@img/profile.webp";
 
-// import { Image } from "astro:assets";
-// import profileImg from "@/assets/profile.png";
 interface ParagraphPart {
   text: string;
   type: "normal" | "italic" | "highlight";
 }
 
-interface Paragraphs {
+interface Paragraph {
   [part: string]: ParagraphPart;
 }
 
 interface Summary {
-  paragraph1: Paragraphs;
-  paragraph2: Paragraphs;
-  paragraph3: Paragraphs;
+  paragraph1: Paragraph;
+  paragraph2: Paragraph;
+  paragraph3: Paragraph;
 }
 
 const SUMMARY: Summary = basics.summary;
@@ -74,10 +74,10 @@ const SUMMARY: Summary = basics.summary;
     </p>
   </div>
 
-  <!-- <Image
-    class="order-1 mb-4 size-64 rounded-full md:order-2"
+  <Image
     src={profileImg}
+    class="order-1 mb-4 size-64 rounded-full md:order-2"
     alt="logo"
     id="img"
-  /> -->
+  />
 </section>

@@ -1,5 +1,8 @@
 ---
+import { Image } from "astro:assets";
 import { basics } from "@data";
+import profileIconImg from "@img/profileIcon.svg";
+
 import Socials from "@/components/utilities/social/Socials.astro";
 import Badge from "@/components/utilities/badge/Badge.astro";
 
@@ -22,6 +25,12 @@ const { name, label, profiles }: BasicsInterface = basics;
 ---
 
 <section class="flex flex-col items-center justify-center md:flex-row">
+  <Image
+    src={profileIconImg}
+    alt="logo"
+    class="mb-4 size-12 rounded-full rotate-180"
+  />
+
   <div class="">
     <h1
       class="flex flex-row gap-x-4 text-balance pb-6 text-2xl font-bold md:text-4xl lg:pb-10 lg:text-5xl text-[--txt-color-1]"

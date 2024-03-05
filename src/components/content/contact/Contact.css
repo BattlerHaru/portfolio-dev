@@ -1,0 +1,80 @@
+.error-border {
+  border-color: var(--txt-error-color-1);
+}
+.error-border:focus {
+  border-color: var(--txt-error-color-1);
+}
+.error-ring {
+  --tw-ring-color: var(--txt-error-color-1);
+}
+
+.contact-line-x {
+  display: block;
+  inset: 0;
+  overflow: hidden;
+  position: absolute;
+}
+
+.contact-line-x::before {
+  background: var(--proj-line-color);
+  content: "";
+  height: var(--proj-line-x-h);
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  transform: skewX(325deg);
+  transition: 0.5s;
+  width: var(--proj-line-x-w);
+}
+
+.contact-line-x::after {
+  background: var(--proj-line-color);
+  bottom: 0;
+  content: "";
+  height: var(--proj-line-x-h);
+  opacity: 0.8;
+  position: absolute;
+  right: 0;
+  transform: skewX(325deg);
+  transition: 0.5s;
+  width: var(--proj-line-x-w);
+}
+
+.contact-line-y {
+  display: block;
+  inset: 0;
+  position: absolute;
+  overflow: hidden;
+}
+
+.contact-line-y::before {
+  background: var(--proj-line-color);
+  content: "";
+  height: var(--proj-line-y-h);
+  left: 0;
+  opacity: 0.8;
+  position: absolute;
+  top: 0;
+  transform: skewY(65deg);
+  transition: 0.5s;
+  width: var(--proj-line-y-w);
+}
+.contact-line-y::after {
+  background: var(--proj-line-color);
+  bottom: 0;
+  content: "";
+  height: var(--proj-line-y-h);
+  opacity: 0.8;
+  position: absolute;
+  right: 0;
+  transform: skewY(65deg);
+  transition: 0.5s;
+  width: var(--proj-line-y-w);
+}
+.contact-form:hover .contact-line-y::after,
+.contact-form:hover .contact-line-y::before,
+.contact-form:hover .contact-line-x::after,
+.contact-form:hover .contact-line-x::before {
+  background: var(--txt-color-4);
+}
