@@ -1,0 +1,483 @@
+{
+    "basics": {
+        "name": "Your Name",
+        "label": "Principal description",
+        "image": "",
+        "email": "your email",
+        "phone": "",
+        "url": "",
+        "summary": {
+            "paragraph1": {
+                "part-1": {
+                    "text": "first paragraph for ",
+                    "type": "normal"
+                },
+                "part-2": {
+                    "text": "'example' ",
+                    "type": "italic"
+                },
+                "part-3": {
+                    "text": "you can change this for ",
+                    "type": "normal "
+                },
+                "part-4": {
+                    "text": "any paragraphs.",
+                    "type": "highlight"
+                }
+            },
+            "paragraph2": {
+                "part-1": {
+                    "text": "blablabla ",
+                    "type": "normal"
+                },
+                "part-2": {
+                    "text": "its for example.",
+                    "type": "normal"
+                }
+            },
+            "paragraph3": {
+                "part-1": {
+                    "text": "last? ",
+                    "type": "highlight"
+                },
+                "part-2": {
+                    "text": "joke, this is the last paragraph."
+                }
+            }
+        },
+        "location": {
+            "address": "",
+            "postalCode": "",
+            "city": "",
+            "countryCode": "country",
+            "region": ""
+        },
+        "profiles": {
+            "LinkedIn": {
+                "username": "your username",
+                "url": "LinkedIn url all its important to social buttons, if you want a change, pls change the component",
+                "color": "#0A66C2"
+            },
+            "GitHub": {
+                "username": "your username",
+                "url": "GitHub url all its important to social buttons, if you want a change, pls change the component",
+                "color": "#4CAF50"
+            },
+            "X": {
+                "username": "your username",
+                "url": "X url, all its important to social buttons, if you want a change, pls change the component",
+                "color": "#2795D9"
+            }
+        }
+    },
+    "work": [
+        {
+            "name": "company name",
+            "position": "position name",
+            "url": "",
+            "startDate": "date",
+            "endDate": "",
+            "summary": "summary or description.",
+            "highlights": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ]
+        },
+        {
+            "name": "company name",
+            "position": "position name",
+            "url": "",
+            "startDate": "date",
+            "endDate": "",
+            "summary": "summary or description.",
+            "highlights": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ]
+        },
+        {
+            "name": "company name",
+            "position": "position name",
+            "url": "",
+            "startDate": "date",
+            "endDate": "",
+            "summary": "summary or description.",
+            "highlights": [
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6"
+            ]
+        }
+    ],
+    "volunteer": [
+        {
+            "organization": "",
+            "position": "",
+            "url": "",
+            "startDate": "",
+            "endDate": "",
+            "summary": "",
+            "highlights": [
+                ""
+            ]
+        }
+    ],
+    "education": [
+        {
+            "institution": "university name",
+            "url": "univerity url",
+            "area": "area",
+            "studyType": "Bachelor",
+            "startDate": "start date",
+            "endDate": "end date",
+            "score": "",
+            "courses": [
+                "courses name"
+            ]
+        }
+    ],
+    "awards": [
+        {
+            "title": "",
+            "date": "",
+            "awarder": "",
+            "summary": ""
+        }
+    ],
+    "certificates": [
+        {
+            "name": "",
+            "date": "",
+            "issuer": "",
+            "url": ""
+        }
+    ],
+    "publications": [
+        {
+            "name": "",
+            "publisher": "",
+            "releaseDate": "",
+            "url": "",
+            "summary": ""
+        }
+    ],
+    "skills": {
+        "backend": [
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword"
+                ],
+                "frameworks": [
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword"
+                        ]
+                    },
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "frontend": [
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ],
+                "frameworks": [
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword",
+                            "keyword"
+                        ]
+                    },
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword",
+                            "keyword"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ],
+                "frameworks": [
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword",
+                            "keyword"
+                        ],
+                        "frameworks": [
+                            {
+                                "name": "name",
+                                "keywords": [
+                                    "keyword",
+                                    "keyword",
+                                    "keyword",
+                                    "keyword"
+                                ]
+                            },
+                            {
+                                "name": "name",
+                                "keywords": [
+                                    "keyword",
+                                    "keyword",
+                                    "keyword",
+                                    "keyword"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword",
+                            "keyword"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "mobile": [
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword"
+                ],
+                "frameworks": [
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword",
+                            "keyword"
+                        ]
+                    }
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword"
+                ],
+                "frameworks": [
+                    {
+                        "name": "name",
+                        "keywords": [
+                            "keyword",
+                            "keyword",
+                            "keyword"
+                        ]
+                    }
+                ]
+            }
+        ],
+        "databases": [
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            }
+        ],
+        "tools": [
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            },
+            {
+                "name": "name",
+                "keywords": [
+                    "keyword",
+                    "keyword",
+                    "keyword"
+                ]
+            }
+        ]
+    },
+    "languages": [
+        {
+            "language": "language",
+            "fluency": "level"
+        },
+        {
+            "language": "language",
+            "fluency": "level"
+        }
+    ],
+    "interests": [
+        {
+            "name": "name",
+            "keywords": [
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword"
+            ]
+        },
+        {
+            "name": "name",
+            "keywords": [
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword"
+            ]
+        },
+        {
+            "name": "name",
+            "keywords": [
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword"
+            ]
+        },
+        {
+            "name": "name",
+            "keywords": [
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword"
+            ]
+        },
+        {
+            "name": "name",
+            "keywords": [
+                "keyword",
+                "keyword",
+                "keyword",
+                "keyword"
+            ]
+        }
+    ],
+    "references": [
+        {
+            "name": "",
+            "reference": ""
+        }
+    ],
+    "projects": [
+        {
+            "name": "project name",
+            "date": "year",
+            "description": "description",
+            "tags": [
+                "tag",
+                "tag",
+                "tag",
+                "tag",
+                "tag"
+            ],
+            "url": "project url",
+            "github": "project url github",
+            "images": [
+                "image-1",
+                "image-2",
+                "image-3",
+                "image-4"
+            ]
+        }
+    ]
+}
