@@ -41,6 +41,7 @@ const getImageCollection = (id: string) => {
             imageCollection.push(image.src);
         }
     })
+    return imageCollection;
 }
 
 const controlImageCollection = (direction: "next" | "prev") => {
@@ -59,9 +60,14 @@ const controlImageCollection = (direction: "next" | "prev") => {
 
 const openModal = (src: string, id: string) => {
     if (modalImg) {
-        getImageCollection(id);
+        let galleryImgs = getImageCollection(id);
         modalImg.src = src;
         modal.showModal();
+
+        if (galleryImgs.length < 2) {
+            prevButton.style.display = "none";
+            nextButton.style.display = "none";
+        }
     }
 };
 

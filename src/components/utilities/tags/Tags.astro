@@ -5,17 +5,23 @@ const tags: string[] = Astro.props.tags;
 const SKILLS: { [key: string]: string } = skills;
 const colorDefault = "#252525";
 const assetsDir = "./src/assets/icons/skills/";
+const regexTag = /\s+/g;
 ---
 
 {
   tags.map((tag: string) => (
     <li
-      style={`--tag-color: ${SKILLS[tag.toLowerCase().replace(/\s+/g, "-")] ? SKILLS[tag.toLowerCase().replace(/\s+/g, "-")] : colorDefault}`}
+      style={`--tag-color: ${SKILLS[tag.toLowerCase().replace(regexTag, "-")] ? SKILLS[tag.toLowerCase().replace(regexTag, "-")] : colorDefault}`}
       class={`project-tag bg-[--tag-color] rounded-2xl p-2 hover:scale-105 cursor-default`}
     >
       <div class="flex gap-x-1">
         <img
-          src={`${assetsDir}/${tag.toLowerCase().replace(/\s+/g, "-")}.svg`}
+          src={`
+            ${
+              SKILLS[tag.toLowerCase().replace(regexTag, "-")]
+                ? `${assetsDir}/${tag.toLowerCase().replace(regexTag, "-")}.svg`
+                : `${assetsDir}/question.svg`
+            }`}
           alt=""
           class="size-4 rounded bg-white/5 "
         />
