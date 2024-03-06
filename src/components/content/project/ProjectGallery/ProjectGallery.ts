@@ -64,9 +64,12 @@ const openModal = (src: string, id: string) => {
         modalImg.src = src;
         modal.showModal();
 
-        if (galleryImgs.length < 2) {
+        if (galleryImgs.length === 1) {
             prevButton.style.display = "none";
             nextButton.style.display = "none";
+        } else {
+            prevButton.style.display = "block";
+            nextButton.style.display = "block";
         }
     }
 };
