@@ -1,6 +1,11 @@
 ---
 import "./ProjectGallery.css";
 const { class: className } = Astro.props;
+/* 
+Note: It's very important follow the format for images:
+example: test-1.jpg
+without more points al final, it's important has a "-"  before a image number;
+ */
 
 const images: string[] = Astro.props.images;
 ---
@@ -13,7 +18,7 @@ const images: string[] = Astro.props.images;
           <img
             id={image}
             loading="lazy"
-            src={`/src/assets/img/${image}.webp`}
+            src={`/src/assets/img/${image}`}
             alt={`${image}`}
             class={`gallery-img aspect-video object-cover rounded-2xl h-full ${className}`}
           />
@@ -24,8 +29,14 @@ const images: string[] = Astro.props.images;
 </div>
 <dialog id="modalContainer" class="modal-container">
   <div id="modalContent" class="modal-content">
+    <button id="modalBtnPrev" class="modal-btn-prev" formmethod="dialog"
+      >&lt;</button
+    >
     <button id="modalBtnClose" class="modal-btn-close" formmethod="dialog"
       >&times;</button
+    >
+    <button id="modalBtnNext" class="modal-btn-next" formmethod="dialog"
+      >&gt;</button
     >
     <img class="modal-img" id="modalImg" />
   </div>

@@ -27,7 +27,9 @@
   height: 100%;
 }
 
-.modal-btn-close {
+.modal-btn-close,
+.modal-btn-prev,
+.modal-btn-next {
   position: absolute;
   top: 1rem;
   right: 2rem;
@@ -39,11 +41,27 @@
   outline: none;
   filter: drop-shadow(0 0 1rem black);
 }
+.modal-btn-prev {
+  top: 50%;
+  left: 1rem;
+  right: auto;
+}
+.modal-btn-next {
+  top: 50%;
+  right: 2rem;
+}
 
-.modal-btn-close:hover {
+.modal-btn-close:hover,
+.modal-btn-prev:hover,
+.modal-btn-next:hover {
   filter: drop-shadow(0 0 1.2rem black);
   outline: none;
   color: var(--txt-error-color-1);
   background: transparent;
   transform: scale(1.2);
+}
+
+.modal-btn-prev:hover,
+.modal-btn-next:hover {
+  color: white;
 }
