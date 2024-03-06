@@ -1,0 +1,33 @@
+---
+import "./ProjectGallery.css";
+const { class: className } = Astro.props;
+
+const images: string[] = Astro.props.images;
+---
+
+<div class="gallery-container max-w-[45rem] aspect-video">
+  <section class="gallery-item flex flex-wrap justify-center px-4 py-4">
+    {
+      images.map((image) => (
+        <div class="galery-item w-full sm:w-1/2 p-2">
+          <img
+            id={image}
+            loading="lazy"
+            src={`/src/assets/img/${image}.webp`}
+            alt={`${image}`}
+            class={`gallery-img aspect-video object-cover rounded-2xl h-full ${className}`}
+          />
+        </div>
+      ))
+    }
+  </section>
+</div>
+<dialog id="modalContainer" class="modal-container">
+  <div id="modalContent" class="modal-content">
+    <button id="modalBtnClose" class="modal-btn-close" formmethod="dialog"
+      >&times;</button
+    >
+    <img class="modal-img" id="modalImg" />
+  </div>
+</dialog>
+<script src="./ProjectGallery.ts"></script>

@@ -1,7 +1,7 @@
 ---
 import "./ProjectItem.css";
 
-import ProjectSlider from "@/components/content/proj/ProjectSlider.astro";
+import ProjectSlider from "@/components/content/project/ProjectGallery/ProjectGallery.astro";
 import Socials from "@/components/utilities/social/Socials.astro";
 import Tags from "@/components/utilities/tags/Tags.astro";
 
@@ -22,7 +22,7 @@ let profile;
 ---
 
 <article
-  class="project flex items-center justify-center flex-wrap rounded-md p-4 relative overflow-hidden"
+  class="project flex items-center justify-center flex-wrap rounded-md p-4 relative"
 >
   <i class="projec-line-x"></i>
   <i class="projec-line-y"></i>
@@ -80,11 +80,8 @@ let profile;
     </footer>
   </div>
   <div
-    class="project-images bg-[--proj-img-blur] rounded-2xl blur-sm transition ease-in z-10 basis-8/12"
+    class="project-images bg-[--proj-img-container-bg-color] rounded-2xl blur-sm transition ease-in z-10 basis-8/12"
   >
-    <ProjectSlider
-      images={images}
-      class="project-image aspect-[16/12] rounded-2xl h-full mix-blend-multiply"
-    />
+    <ProjectSlider images={images} class="project-images" />
   </div>
 </article>

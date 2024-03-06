@@ -46,11 +46,7 @@
   --proj-line-y-h: 10rem;
   --proj-line-y-w: 0.25rem;
   --proj-line-color: var(--txt-color-3);
-  --proj-img-blur: #649aff;
-  --proj-img-slider-navLink-hover-bg-color: #5d59c2;
-  --proj-img-slider-navLink-bg-color: #ffffff;
-  --proj-img-slider-navLink-border-color: #00000065;
-  --proj-img-slider-navLink-hover-border-color: #fcfcff;
+  --proj-img-container-bg-color: #e8eaff;
   --proj-hover-bg-color: var(--bg-color-2);
   --proj-desc-bg-color: var(--bg-color-3);
   --proj-desc-bg-hover-color: var(--bg-hover-color-2);
@@ -152,11 +148,7 @@
 
   /* Projects */
   --proj-line-color: var(--txt-color-3);
-  --proj-img-blur: #649aff;
-  --proj-img-slider-navLink-hover-bg-color: #5d59c2;
-  --proj-img-slider-navLink-bg-color: #ffffff;
-  --proj-img-slider-navLink-border-color: #00000065;
-  --proj-img-slider-navLink-hover-border-color: #fcfcff;
+  --proj-img-container-bg-color: #252525;
   --proj-hover-bg-color: var(--bg-color-2);
   --proj-desc-bg-color: var(--bg-color-3);
   --proj-desc-bg-hover-color: var(--bg-hover-color-2);

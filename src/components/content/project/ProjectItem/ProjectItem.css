@@ -95,17 +95,11 @@
 .project-images {
 }
 
-.project-image {
-}
-
 .project:hover {
   background: var(--proj-hover-bg-color);
 }
 .project:hover .project-description {
   background: var(--proj-desc-bg-hover-color);
-}
-.project:hover .project-image {
-  mix-blend-mode: normal;
 }
 .project:hover .project-images {
   filter: blur(0);

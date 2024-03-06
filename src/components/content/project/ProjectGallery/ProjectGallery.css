@@ -1,0 +1,49 @@
+.gallery-container {
+}
+.galery-item {
+}
+.gallery-img {
+}
+.modal-container {
+  position: fixed;
+  box-shadow: 0 0 0.8rem #7d5ba4cc;
+  border-radius: 1rem;
+}
+
+.modal-container::backdrop {
+  background-color: #000000d8;
+}
+
+.modal-content {
+  position: relative;
+  width: 85dvw;
+  height: 75dvh;
+  aspect-ratio: 16/9;
+}
+
+.modal-img {
+  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  z-index: 40;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  transition: 0.3s;
+  outline: none;
+  filter: drop-shadow(0 0 1rem black);
+}
+
+.modal-btn-close:hover {
+  filter: drop-shadow(0 0 1.2rem black);
+  outline: none;
+  color: var(--txt-error-color-1);
+  background: transparent;
+  transform: scale(1.2);
+}
