@@ -5,11 +5,15 @@ import profileImg from "@img/profile.webp";
 
 interface ParagraphPart {
   text: string;
-  type: "normal" | "italic" | "highlight";
+  type: string; //"normal" | "italic" | "highlight"
 }
 
 interface Paragraph {
   [part: string]: ParagraphPart;
+  // "part-1"?: ParagraphPart;
+  // "part-2"?: ParagraphPart;
+  // "part-3"?: ParagraphPart;
+  // "part-4"?: ParagraphPart;
 }
 
 interface Summary {

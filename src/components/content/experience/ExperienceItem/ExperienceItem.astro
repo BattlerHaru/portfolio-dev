@@ -4,21 +4,12 @@ import "./ExperienceItem.css";
 interface Props {
   name: string;
   position: string;
-  url: string;
   startDate: string;
   endDate: string;
   summary: string;
-  highlights: string[];
 }
 
-const {
-  name,
-  position,
-  url,
-  startDate: date,
-  summary: description,
-  highlights,
-} = Astro.props;
+const { name, position, startDate: date, summary: description } = Astro.props;
 ---
 
 <div

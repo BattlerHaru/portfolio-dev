@@ -7,7 +7,6 @@ import Tags from "@/components/utilities/tags/Tags.astro";
 
 interface Project {
   name: string;
-  date: string;
   description: string;
   tags: string[];
   url: string;
@@ -16,9 +15,7 @@ interface Project {
 }
 
 const project: Project = Astro.props.project;
-const { name, date, description, tags, url, github, images } = project;
-
-let profile;
+const { name, description, tags, url, github, images } = project;
 ---
 
 <article
@@ -43,21 +40,19 @@ let profile;
       </ul>
     </div>
     <footer
-      class="project-links items-center bottom-0 flex gap-4 justify-center mt-6 relative"
+      class="project-links items-center bottom-0 flex gap-4 justify-around mt-6 relative"
     >
       {
         url && (
           <Socials
-            class="flex flex-wrap  gap-2 mb-4"
-            profiles={
-              (profile = {
-                Url: {
-                  username: "none",
-                  url: url,
-                  color: "#8c35d3",
-                },
-              })
-            }
+            class="flex flex-wrap gap-2 mb-4"
+            profiles={{
+              Url: {
+                username: "none",
+                url: url,
+                color: "#8c35d3",
+              },
+            }}
           />
         )
       }
@@ -65,15 +60,13 @@ let profile;
         github && (
           <Socials
             class=" flex flex-wrap  gap-2 mb-4"
-            profiles={
-              (profile = {
-                GitHub: {
-                  username: "none",
-                  url: github,
-                  color: "#0A66C2",
-                },
-              })
-            }
+            profiles={{
+              GitHub: {
+                username: "none",
+                url: github,
+                color: "#0A66C2",
+              },
+            }}
           />
         )
       }

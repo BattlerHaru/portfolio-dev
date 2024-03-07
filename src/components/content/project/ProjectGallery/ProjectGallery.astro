@@ -11,7 +11,9 @@ const images: string[] = Astro.props.images;
 ---
 
 <div class="gallery-container max-w-[45rem] aspect-video">
-  <section class="gallery-item flex flex-wrap justify-center px-4 py-4">
+  <section
+    class="gallery-item flex flex-wrap justify-center items-center px-4 py-4"
+  >
     {
       images.map((image) => (
         <div class="galery-item w-full sm:w-1/2 p-2">

@@ -67,17 +67,17 @@ contactInputMessage.addEventListener("input", () => {
     }, 500);
 });
 
-contactInputSubject.addEventListener('change', (event) => {
+contactInputSubject.addEventListener('change', () => {
     contactInputShowBG(contactInputSubject);
 });
-contactInputSubject.addEventListener('focus', (event) => {
+contactInputSubject.addEventListener('focus', () => {
     contactInputShowBG(contactInputSubject);
 });
 
-contactInputMessage.addEventListener('change', (event) => {
+contactInputMessage.addEventListener('change', () => {
     contactInputShowBG(contactInputMessage);
 });
-contactInputMessage.addEventListener('focus', (event) => {
+contactInputMessage.addEventListener('focus', () => {
     contactInputShowBG(contactInputMessage);
 });
 
