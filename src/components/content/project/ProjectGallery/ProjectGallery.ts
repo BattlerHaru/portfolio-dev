@@ -2,9 +2,6 @@ const images: NodeListOf<HTMLImageElement> =
     document.querySelectorAll(".gallery-img");
 
 const modal = document.getElementById("modalContainer") as HTMLDialogElement;
-const modalContent = document.getElementById(
-    "modalContent",
-) as HTMLButtonElement;
 const modalImg = document.getElementById("modalImg") as HTMLImageElement;
 
 const closeButton = document.getElementById(
