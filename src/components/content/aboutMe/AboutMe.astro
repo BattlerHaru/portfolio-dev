@@ -5,15 +5,12 @@ import profileImg from "@img/profile.webp";
 
 interface ParagraphPart {
   text: string;
-  type: string; //"normal" | "italic" | "highlight"
+  type: string; //"normal" | "italic" | "highlight";
 }
 
 interface Paragraph {
   [part: string]: ParagraphPart;
-  // "part-1"?: ParagraphPart;
-  // "part-2"?: ParagraphPart;
-  // "part-3"?: ParagraphPart;
-  // "part-4"?: ParagraphPart;
+  // "part-1"?:  ParagraphPart;
 }
 
 interface Summary {
@@ -38,9 +35,9 @@ const SUMMARY: Summary = basics.summary;
     <p class="">
       {
         Object.values(SUMMARY.paragraph1).map((part) =>
-          part.type === "highlight" ? (
+          part.type == "highlight" ? (
             <strong>{part.text}</strong>
-          ) : part.type === "italic" ? (
+          ) : part.type == "italic" ? (
             <em class="italic">{part.text}</em>
           ) : (
             part.text
@@ -52,9 +49,9 @@ const SUMMARY: Summary = basics.summary;
     <p>
       {
         Object.values(SUMMARY.paragraph2).map((part) =>
-          part.type === "highlight" ? (
+          part.type == "highlight" ? (
             <strong>{part.text}</strong>
-          ) : part.type === "italic" ? (
+          ) : part.type == "italic" ? (
             <em class="italic">{part.text}</em>
           ) : (
             part.text
@@ -66,9 +63,9 @@ const SUMMARY: Summary = basics.summary;
     <p>
       {
         Object.values(SUMMARY.paragraph3).map((part) =>
-          part.type === "highlight" ? (
+          part.type == "highlight" ? (
             <strong>{part.text}</strong>
-          ) : part.type === "italic" ? (
+          ) : part.type == "italic" ? (
             <em class="italic">{part.text}</em>
           ) : (
             part.text
