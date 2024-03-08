@@ -1,0 +1,18 @@
+---
+interface ParagraphPart {
+  text: string;
+  type: string; //"normal" | "italic" | "highlight";
+}
+
+const { text, type }: ParagraphPart = Astro.props.paragraphPart;
+const index: number = Astro.props.paragraphIndex;
+const array: number = Astro.props.paragraphArray;
+---
+
+{type == "highlight" && <strong>{text}</strong>}
+
+{type == "italic" && <em class="italic">{text}</em>}
+
+{type == "normal" && text}
+
+{index <= array && "\u00A0"}

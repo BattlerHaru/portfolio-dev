@@ -1,6 +1,8 @@
 ---
-import "./Skills.css";
+import "@css/Skills.css";
 import { skills } from "@data";
+import SkillsItem from "./SkillsItem.astro";
+const assetsDir = "/icons/skills/";
 
 interface Skill {
   name: string;
@@ -15,8 +17,6 @@ interface Skills {
   databases: Skill[];
   tools: Skill[];
 }
-
-const assetsDir = "./src/assets/icons/skills/";
 
 const BACKEND: Skill[] = skills.backend;
 const FRONTEND: Skill[] = skills.frontend;
@@ -39,41 +39,19 @@ const TOOLS: Skill[] = skills.tools;
       {
         FRONTEND.map((item) => (
           <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
+            <SkillsItem item={item} />
+
             {item.frameworks && (
               <ul class="skill-ul">
                 {item.frameworks.map((framework) => (
                   <li class="skill-li">
-                    <div class="skill-item">
-                      <img
-                        class="skill-img"
-                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                        alt={framework.name}
-                      />
-                      <span class="skill-title">{framework.name}</span>
-                    </div>
+                    <SkillsItem item={framework} />
 
                     {framework.frameworks && (
                       <ul class="skill-ul">
                         {framework.frameworks.map((subframework) => (
                           <li class="skill-li">
-                            <div class="skill-item">
-                              <img
-                                class="skill-img"
-                                src={`${assetsDir}/${subframework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                                alt={subframework.name}
-                              />
-                              <span class="skill-title">
-                                {subframework.name}
-                              </span>
-                            </div>
+                            <SkillsItem item={subframework} />
                           </li>
                         ))}
                       </ul>
@@ -99,26 +77,12 @@ const TOOLS: Skill[] = skills.tools;
       {
         BACKEND.map((item) => (
           <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
+            <SkillsItem item={item} />
             {item.frameworks && (
               <ul class="skill-ul">
                 {item.frameworks.map((framework) => (
                   <li class="skill-li">
-                    <div class="skill-item">
-                      <img
-                        class="skill-img"
-                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                        alt={framework.name}
-                      />
-                      <span class="skill-title">{framework.name}</span>
-                    </div>
+                    <SkillsItem item={framework} />
                   </li>
                 ))}
               </ul>
@@ -140,26 +104,12 @@ const TOOLS: Skill[] = skills.tools;
       {
         MOBILE.map((item) => (
           <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
+            <SkillsItem item={item} />
             {item.frameworks && (
               <ul class="skill-ul">
                 {item.frameworks.map((framework) => (
                   <li class="skill-li">
-                    <div class="skill-item">
-                      <img
-                        class="skill-img"
-                        src={`${assetsDir}/${framework.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                        alt={framework.name}
-                      />
-                      <span class="skill-title">{framework.name}</span>
-                    </div>
+                    <SkillsItem item={framework} />
                   </li>
                 ))}
               </ul>
@@ -185,14 +135,7 @@ const TOOLS: Skill[] = skills.tools;
       {
         DATABASES.map((item) => (
           <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
+            <SkillsItem item={item} />
           </li>
         ))
       }
@@ -210,14 +153,7 @@ const TOOLS: Skill[] = skills.tools;
       {
         TOOLS.map((item) => (
           <li class="skill-li">
-            <div class="skill-item">
-              <img
-                class="skill-img"
-                src={`${assetsDir}/${item.name.toLowerCase().replace(/\s+/g, "-")}.svg`}
-                alt={item.name}
-              />
-              <span class="skill-title">{item.name}</span>
-            </div>
+            <SkillsItem item={item} />
           </li>
         ))
       }

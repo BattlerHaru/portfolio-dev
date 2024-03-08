@@ -6,6 +6,7 @@
       "@data": ["src/assets/data/resume.json"],
       "@skills": ["src/assets/data/skills.json"],
       "@icons/*": ["src/assets/icons/*"],
+      "@css/*": ["src/styles/*"],
       "@img/*": ["src/assets/img/*"],
       "@/*": ["src/*"]
     }

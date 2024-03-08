@@ -1,0 +1,3 @@
+.skill-accordion:hover .skill-accordion-arrow {
+    color: var(--txt-color-3);
+  }

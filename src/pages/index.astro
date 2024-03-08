@@ -1,16 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
+
 import SectionContainer from "@/components/utilities/SectionContainer.astro";
 import Home from "@/components/content/Home.astro";
 import Experience from "@/components/content/experience/Experience.astro";
 import Projects from "@/components/content/project/Projects.astro";
-import Skills from "@/components/content/skills/Skills.astro";
 import AboutMe from "@/components/content/aboutMe/AboutMe.astro";
+import SkillsAccordion from "@/components/content/skills/SkillsAccordion.astro";
 import Contact from "@/components/content/contact/Contact.astro";
 
 import BriefcaseIcon from "@icons/sections/Briefcase.astro";
 import CodeIcon from "@icons/sections/Code.astro";
-import StarsFilledIcon from "@icons/sections/StarsFilled.astro";
 import UserFilledIcon from "@icons/sections/UserFilled.astro";
 import MailForwardIcon from "@icons/sections/MailForward.astro";
 ---
@@ -50,43 +50,7 @@ import MailForwardIcon from "@icons/sections/MailForward.astro";
       </h2>
       <AboutMe />
       <!-- Skills Optional -->
-      <div
-        class="skill-accordion text-[--txt-color-1] border-2 border-[--bg-color-3] hover:border-[--txt-color-3] rounded-lg px-4 pb-4"
-      >
-        <input
-          class="opacity-0 skill-accordion-input"
-          type="checkbox"
-          id="skills-accordion-input"
-          checked
-        />
-        <label
-          for="skills-accordion-input"
-          class="flex
-            relative
-            text-[--txt-color-3]
-            text-4xl
-            cursor-pointer
-            justify-between
-            transition-all duration-350
-            mr-8"
-          ><h2
-            class="flex items-center gap-x-3 text-3xl font-semibold text-[--txt-color-1]"
-          >
-            <StarsFilledIcon class="size-7" />
-            Skills
-          </h2>
-          <span
-            class="absolute -right-2 -top-1 rotate-90 skill-accordion-arrow origin-center text-[--bg-color-3]"
-            >&#x276F;</span
-          ></label
-        >
-        <div
-          class="skill-accordion-content transition-all duration-350 overflow-hidden max-h-0"
-        >
-          <Skills />
-        </div>
-      </div>
-      <script src="./Index.ts"></script>
+      <SkillsAccordion />
     </SectionContainer>
 
     <SectionContainer class="" id="contact">
@@ -100,9 +64,3 @@ import MailForwardIcon from "@icons/sections/MailForward.astro";
     </SectionContainer>
   </main>
 </Layout>
-
-<style>
-  .skill-accordion:hover .skill-accordion-arrow {
-    color: var(--txt-color-3);
-  }
-</style>

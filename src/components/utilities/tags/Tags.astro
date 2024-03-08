@@ -4,7 +4,7 @@ import skills from "@/assets/data/skills.json";
 const tags: string[] = Astro.props.tags;
 const SKILLS: { [key: string]: string } = skills;
 const colorDefault = "#252525";
-const assetsDir = "./src/assets/icons/skills/";
+const assetsDir = "/icons/skills/";
 const regexTag = /\s+/g;
 ---
 
@@ -19,8 +19,8 @@ const regexTag = /\s+/g;
           src={`
             ${
               SKILLS[tag.toLowerCase().replace(regexTag, "-")]
-                ? `${assetsDir}/${tag.toLowerCase().replace(regexTag, "-")}.svg`
-                : `${assetsDir}/question.svg`
+                ? `${assetsDir}${tag.toLowerCase().replace(regexTag, "-")}.svg`
+                : `${assetsDir}question.svg`
             }`}
           alt=""
           class="size-4 rounded bg-white/5 "

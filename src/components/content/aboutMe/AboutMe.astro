@@ -2,6 +2,7 @@
 import { Image } from "astro:assets";
 import { basics } from "@data";
 import profileImg from "@img/profile.webp";
+import AboutMeItem from "./AboutMeItem.astro";
 
 interface ParagraphPart {
   text: string;
@@ -10,7 +11,6 @@ interface ParagraphPart {
 
 interface Paragraph {
   [part: string]: ParagraphPart;
-  // "part-1"?:  ParagraphPart;
 }
 
 interface Summary {
@@ -25,7 +25,7 @@ const SUMMARY: Summary = basics.summary;
 <section class="flex flex-col items-center justify-center gap-8 md:flex-row">
   <div
     class="order-2
-    text-pretty
+    text-wrap
     text-[txt-color-1]
     md:order-1
     [&>p>strong]:font-semibold
@@ -34,43 +34,36 @@ const SUMMARY: Summary = basics.summary;
   >
     <p class="">
       {
-        Object.values(SUMMARY.paragraph1).map((part) =>
-          part.type == "highlight" ? (
-            <strong>{part.text}</strong>
-          ) : part.type == "italic" ? (
-            <em class="italic">{part.text}</em>
-          ) : (
-            part.text
-          ),
-        )
+        Object.values(SUMMARY.paragraph1).map((part, index, array) => (
+          <AboutMeItem
+            paragraphPart={part}
+            paragraphIndex={index}
+            paragraphArray={array.length}
+          />
+        ))
+      }
+    </p>
+    <p>
+      {
+        Object.values(SUMMARY.paragraph2).map((part, index, array) => (
+          <AboutMeItem
+            paragraphPart={part}
+            paragraphIndex={index}
+            paragraphArray={array.length}
+          />
+        ))
       }
     </p>
 
     <p>
       {
-        Object.values(SUMMARY.paragraph2).map((part) =>
-          part.type == "highlight" ? (
-            <strong>{part.text}</strong>
-          ) : part.type == "italic" ? (
-            <em class="italic">{part.text}</em>
-          ) : (
-            part.text
-          ),
-        )
-      }
-    </p>
-
-    <p>
-      {
-        Object.values(SUMMARY.paragraph3).map((part) =>
-          part.type == "highlight" ? (
-            <strong>{part.text}</strong>
-          ) : part.type == "italic" ? (
-            <em class="italic">{part.text}</em>
-          ) : (
-            part.text
-          ),
-        )
+        Object.values(SUMMARY.paragraph3).map((part, index, array) => (
+          <AboutMeItem
+            paragraphPart={part}
+            paragraphIndex={index}
+            paragraphArray={array.length}
+          />
+        ))
       }
     </p>
   </div>

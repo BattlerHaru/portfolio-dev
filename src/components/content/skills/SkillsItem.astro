@@ -1,0 +1,20 @@
+---
+const assetsDir = "/icons/skills/";
+
+interface Skill {
+  name: string;
+  keywords: string[];
+  frameworks?: Skill[];
+}
+
+const { name }: Skill = Astro.props.item;
+---
+
+<div class="skill-item">
+  <img
+    class="skill-img"
+    src={`${assetsDir}${name.toLowerCase().replace(/\s+/g, "-")}.svg`}
+    alt={name}
+  />
+  <span class="skill-title">{name}</span>
+</div>

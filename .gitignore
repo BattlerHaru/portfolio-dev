@@ -4,6 +4,8 @@ dist/
 # assets
 src/assets/data/resume.json
 src/assets/img/
+public/imgs/
+
 
 # generated types
 .astro/
