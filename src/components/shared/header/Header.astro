@@ -36,13 +36,19 @@ const NavBarItems = [
       class="mx-auto flex max-w-screen-xl flex-wrap items-center justify-between p-4"
     >
       <a href={NavBarItems[0].href} class="">
-        <Image class="size-12" src={logoImg} alt="Logo" loading="eager" />
+        <Image
+          class="size-12 aspect-video"
+          src={logoImg}
+          alt="Logo"
+          loading="eager"
+        />
       </a>
 
       <button
         data-collapse-toggle="navbar-default"
         type="button"
         class="inline-flex
+         order-2
           h-10
           w-10
           items-center
@@ -59,7 +65,7 @@ const NavBarItems = [
         <MenuIcon class="size-8" />
       </button>
 
-      <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+      <div class="hidden w-full md:block md:w-auto order-3" id="navbar-default">
         <ul
           class="flex
             flex-col
@@ -96,7 +102,8 @@ const NavBarItems = [
           }
         </ul>
       </div>
-      <div class="hidden md:block"><Toggle /></div>
+
+      <div class="sm:flex md:block order-1 md:order-4"><Toggle /></div>
     </div>
   </nav>
 </header>
