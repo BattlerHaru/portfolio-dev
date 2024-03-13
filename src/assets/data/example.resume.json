@@ -9,11 +9,11 @@
         "summary": {
             "paragraph1": {
                 "part-1": {
-                    "text": "first paragraph for ",
+                    "text": "first paragraph for",
                     "type": "normal"
                 },
                 "part-2": {
-                    "text": "'example' ",
+                    "text": "'example'",
                     "type": "italic"
                 },
                 "part-3": {
@@ -27,7 +27,7 @@
             },
             "paragraph2": {
                 "part-1": {
-                    "text": "blablabla ",
+                    "text": "blablabla",
                     "type": "normal"
                 },
                 "part-2": {
@@ -37,7 +37,7 @@
             },
             "paragraph3": {
                 "part-1": {
-                    "text": "last? ",
+                    "text": "last?",
                     "type": "highlight"
                 },
                 "part-2": {
@@ -470,8 +470,16 @@
                 "tag",
                 "tag"
             ],
-            "url": "project url",
-            "github": "project url github",
+            "url": {
+                "username": "",
+                "url": "your-link",
+                "color": "color hex"
+            },
+            "github": {
+                "username": "",
+                "url": "your-link",
+                "color": "color hex"
+            },
             "images": [
                 "image-1",
                 "image-2",

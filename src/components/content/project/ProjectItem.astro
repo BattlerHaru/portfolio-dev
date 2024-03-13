@@ -5,12 +5,18 @@ import ProjectSlider from "@/components/content/project/ProjectGallery.astro";
 import Socials from "@/components/utilities/social/Socials.astro";
 import Tags from "@/components/utilities/tags/Tags.astro";
 
+interface Profile {
+  username: string;
+  url: string;
+  color: string;
+}
+
 interface Project {
   name: string;
   description: string;
   tags: string[];
-  url: string;
-  github: string;
+  url?: Profile;
+  github?: Profile;
   images: string[];
 }
 
@@ -40,18 +46,14 @@ const { name, description, tags, url, github, images } = project;
       </ul>
     </div>
     <footer
-      class="project-links items-center bottom-0 flex gap-4 justify-around mt-6 relative"
+      class=`project-links items-center bottom-0 flex gap-4 ${(url && github)? "justify-around": "justify-start"} mt-6 relative`
     >
       {
         url && (
           <Socials
             class="flex flex-wrap gap-2 mb-4"
             profiles={{
-              Url: {
-                username: "none",
-                url: url,
-                color: "#8c35d3",
-              },
+              Url: url,
             }}
           />
         )
@@ -59,13 +61,9 @@ const { name, description, tags, url, github, images } = project;
       {
         github && (
           <Socials
-            class=" flex flex-wrap  gap-2 mb-4"
+            class=" flex flex-wrap gap-2 mb-4"
             profiles={{
-              GitHub: {
-                username: "none",
-                url: github,
-                color: "#0A66C2",
-              },
+              GitHub: github,
             }}
           />
         )

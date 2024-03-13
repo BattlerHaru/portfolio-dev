@@ -3,12 +3,18 @@ import { projects } from "@data";
 
 import ProjectItem from "@/components/content/project/ProjectItem.astro";
 
+interface Profile {
+  username: string;
+  url: string;
+  color: string;
+}
+
 interface Project {
   name: string;
   description: string;
   tags: string[];
-  url: string;
-  github: string;
+  url?: Profile;
+  github?: Profile;
   images: string[];
 }
 

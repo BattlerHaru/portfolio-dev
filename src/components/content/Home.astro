@@ -22,6 +22,15 @@ interface BasicsInterface {
 }
 
 const { name, label, profiles }: BasicsInterface = basics;
+
+const selectedProfiles: string[] = ["LinkedIn", "GitHub", "X"];
+const selectedProfilesData: ProfilesInterface = {};
+
+selectedProfiles.forEach((profileName) => {
+  if (profiles[profileName]) {
+    selectedProfilesData[profileName] = profiles[profileName];
+  }
+});
 ---
 
 <section class="flex flex-col items-center justify-center md:flex-row">
@@ -54,10 +63,11 @@ const { name, label, profiles }: BasicsInterface = basics;
     >
   </div>
 </section>
-<h2
-  class="max-w-[900px] text-balance text-xl opacity-80 lg:text-2xl text-[--txt-color-1]"
->
+<p class="text-pretty text-xl opacity-80 lg:text-2xl text-[--txt-color-1]">
   {label}
-</h2>
+</p>
 
-<Socials class="mt-8 flex flex-wrap justify-center gap-2" profiles={profiles} />
+<Socials
+  class="mt-8 flex flex-wrap justify-center gap-2"
+  profiles={selectedProfilesData}
+/>

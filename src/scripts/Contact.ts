@@ -93,6 +93,7 @@ contactBtn.addEventListener("click", (event) => {
 
         contactInputHideBG(contactInputSubject);
         contactInputHideBG(contactInputMessage);
+        isContactValid = false;
 
     } else {
         contactInputErrorShow(contactInputSubject, contactErrorSubject);

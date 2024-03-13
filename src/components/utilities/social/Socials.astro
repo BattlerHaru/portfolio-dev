@@ -4,6 +4,7 @@ import LinkedInIcon from "@icons/social/Linkedin.astro";
 import GitHubIcon from "@icons/social/GitHub.astro";
 import XIcon from "@icons/social/X.astro";
 import UrlIcon from "@icons/social/Url.astro";
+import CodePenIcon from "@icons/social/CodePen.astro";
 
 const { class: className } = Astro.props;
 const profiles: ProfilesInterface = Astro.props.profiles;
@@ -24,7 +25,7 @@ interface ProfilesInterface {
       <SocialItem
         href={profiles["Url"].url}
         color={profiles["Url"].color}
-        text="Url"
+        text="Web"
       >
         <UrlIcon class="size-4 " />
       </SocialItem>
@@ -36,6 +37,7 @@ interface ProfilesInterface {
         href={profiles["LinkedIn"].url}
         color={profiles["LinkedIn"].color}
         text="LinkedIn"
+        class=""
       >
         <LinkedInIcon class="size-3.5 " />
       </SocialItem>
@@ -62,6 +64,17 @@ interface ProfilesInterface {
         text="Twitter"
       >
         <XIcon class="size-3.5 " />
+      </SocialItem>
+    )
+  }
+  {
+    profiles["CodePen"] && (
+      <SocialItem
+        href={profiles["CodePen"].url}
+        color={profiles["CodePen"].color}
+        text="CodePen"
+      >
+        <CodePenIcon class="size-3.5 " />
       </SocialItem>
     )
   }
